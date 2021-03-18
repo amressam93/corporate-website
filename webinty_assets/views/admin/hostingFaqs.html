@@ -1,0 +1,131 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2><?php echo $pageTitle; ?></h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="<?php echo WEBINTY_PATH; ?>admin_dashboard/">Home</a>
+            </li>
+            <li class="active">
+                <strong><?php echo $pageTitle; ?></strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="container">
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>All Hosting FAQS Data with responsive plugin</h5>
+                    </div>
+                    <div class="ibox-content">
+
+                        <div id="hotingFaqs_result" style="display: none"></div>
+
+                        <table class="table table-bordered table-hover dataTables-example">
+                            <thead>
+                            <tr>
+                                <th style="text-align: center">#ID</th>
+                                <th style="text-align: center">FAQ Question</th>
+                                <th style="text-align: center">Created_By</th>
+                                <th style="text-align: center">Created_AT</th>
+                                <th style="text-align: center">Action</th>
+                            </tr>
+                            </thead>
+                            <tbody style="text-align: center;font-weight: bold">
+                            <?php  foreach($hostingFaqs as $faq){ ?>
+                            <tr class="gradeX">
+                                <td><?php echo $faq['hosting_single_id']; ?></td>
+                                <td><?php echo $faq['hosting_single_question']; ?></td>
+                                <td><?php echo $faq['name']; ?></td>
+                                <td><?php echo $faq['created_at']; ?></td>
+                                <td><div class="btn-group">
+                                    <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle" aria-expanded="false">Action <span class="caret"></span></button>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="hostingFaq.php?id=<?php echo $faq['hosting_single_id']; ?>" class="font-bold"> <i class="fa fa-desktop"></i> Show Details </a></li>
+                                        <li><a href="updateHostingFaq.php?id=<?php echo $faq['hosting_single_id']; ?>" class="font-bold"> <i class="fa fa-refresh"></i> Update </a></li>
+                                        <li><a href="" class="font-bold confirmDeleteHostingFaq" id="<?php echo $faq['hosting_single_id']; ?>"> <i class="fa fa-trash"></i> Delete </a></li>
+                                    </ul>
+                                </div></td>
+                            </tr>
+                            <?php } ?>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Mainly scripts -->
+<script src="<?php echo WEBINTY_BACKEND_ASSETS_PATH; ?>js/jquery-2.1.1.js"></script>
+<script src="<?php echo WEBINTY_BACKEND_ASSETS_PATH; ?>js/bootstrap.min.js"></script>
+<script src="<?php echo WEBINTY_BACKEND_ASSETS_PATH; ?>js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="<?php echo WEBINTY_BACKEND_ASSETS_PATH; ?>js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="<?php echo WEBINTY_BACKEND_ASSETS_PATH; ?>js/plugins/jeditable/jquery.jeditable.js"></script>
+
+<!-- Data Tables -->
+<script src="<?php echo WEBINTY_BACKEND_ASSETS_PATH; ?>js/plugins/dataTables/jquery.dataTables.js"></script>
+<script src="<?php echo WEBINTY_BACKEND_ASSETS_PATH; ?>js/plugins/dataTables/dataTables.bootstrap.js"></script>
+<script src="<?php echo WEBINTY_BACKEND_ASSETS_PATH; ?>js/plugins/dataTables/dataTables.responsive.js"></script>
+
+
+<!-- Custom and plugin javascript -->
+<script src="<?php echo WEBINTY_BACKEND_ASSETS_PATH; ?>js/inspinia.js"></script>
+<script src="<?php echo WEBINTY_BACKEND_ASSETS_PATH; ?>js/plugins/pace/pace.min.js"></script>
+
+<script src="<?php echo WEBINTY_BACKEND_ASSETS_PATH; ?>js/plugins/validate/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/additional-methods.min.js"></script>
+
+<script src="<?php echo WEBINTY_BACKEND_ASSETS_PATH; ?>js/webinty_customize.js"></script>
+
+<!-- Page-Level Scripts -->
+<script>
+    $(document).ready(function() {
+        $('.dataTables-example').dataTable({
+            responsive: true,
+            "dom": 'T<"clear">lfrtip'
+        });
+
+        /* Init DataTables */
+        var oTable = $('#editable').dataTable();
+
+    });
+
+</script>
+
+<style>
+    body.DTTT_Print {
+        background: #fff;
+
+    }
+    .DTTT_Print #page-wrapper {
+        margin: 0;
+        background:#fff;
+    }
+
+    button.DTTT_button, div.DTTT_button, a.DTTT_button {
+        border: 1px solid #e7eaec;
+        background: #fff;
+        color: #676a6c;
+        box-shadow: none;
+        padding: 6px 8px;
+    }
+    button.DTTT_button:hover, div.DTTT_button:hover, a.DTTT_button:hover {
+        border: 1px solid #d2d2d2;
+        background: #fff;
+        color: #676a6c;
+        box-shadow: none;
+        padding: 6px 8px;
+    }
+
+    .dataTables_filter label {
+        margin-right: 5px;
+
+    }
+</style>

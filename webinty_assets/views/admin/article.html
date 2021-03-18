@@ -1,0 +1,180 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2><?php echo $pageTitle; ?></h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="<?php echo WEBINTY_PATH; ?>admin_dashboard/">Home</a>
+            </li>
+            <li>
+                <a href="<?php echo WEBINTY_PATH; ?>admin_dashboard/articles.php">All Articles</a>
+            </li>
+            <li class="active">
+                <strong><?php echo $pageTitle; ?></strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+
+
+<div class="container">
+    <div class="ibox float-e-margins">
+        <div class="ibox-title">
+            <h5><?php echo $pageTitle; ?></h5>
+        </div>
+        <div class="ibox-content">
+
+
+
+            <div class="row">
+
+                <!-- Blog Post Content Column -->
+                <div class="col-lg-9">
+
+                    <!-- Blog Post -->
+
+                    <!-- Title -->
+                    <h1 style="font-family: 'Noto Kufi Arabic', sans-serif;"><?php echo $article['article_title']; ?></h1>
+
+                    <!-- Author -->
+                    <p class="lead">
+                        by <a href="<?php echo WEBINTY_PATH; ?>admin_dashboard/profile.php?id=<?php echo $article['article_created_by']; ?>"><?php echo $article['name']; ?></a>
+                    </p>
+
+                    <hr>
+
+                    <!-- Date/Time -->
+                    <p><span class="glyphicon glyphicon-time"></span> Posted on <strong><?php echo $article['article_created_at']; ?></strong></p>
+
+                    <hr>
+
+
+                    <!-- Date/Time -->
+                    <p> <span class="glyphicon glyphicon-tags"> </span> Category: <strong class="blink_me"><?php echo $article['subject_title']; ?></strong> </p>
+
+                    <hr>
+
+                    <!-- Preview Image -->
+
+                    <div class="row carousel-holder">
+
+                        <div class="col-md-12">
+                            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="3000">
+
+                                <div class="carousel-inner">
+
+                                    <?php foreach($images as $image) { ?>
+                                    <div class="item">
+                                        <img class="slide-image img-responsive" src="<?php echo WEBINTY_BACKEND_UPLOADS_PATH; ?>articles/<?php echo $image['image_name']; ?>" alt="<?php echo $article['article_title']; ?>" style="height: 400px;width:100%">
+                                    </div>
+                                    <?php } ?>
+
+                                </div>
+                                <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                                    <span class="glyphicon glyphicon-chevron-left"></span>
+                                </a>
+                                <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                                    <span class="glyphicon glyphicon-chevron-right"></span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <hr>
+
+                    <!-- Post Content -->
+                    <div style="font-family: 'Noto Kufi Arabic', sans-serif;">
+                        <h5>Subject Description: </h5>
+                        <?php echo $article['article_description']; ?>
+                    </div>
+
+                    <hr>
+
+                    <div class="col-md-8 col-sm-12">
+                        <?php if($article['article_video'] == null)
+                          {echo "";}
+                          else
+                          { ?>
+
+
+                         <iframe width="100%" height="315" src="<?php echo $article['article_video']; ?>" frameborder="0" allowfullscreen></iframe><hr><br>
+
+                        <?php } ?>
+
+                    </div>
+
+
+
+                    <!-- Blog Comments -->
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1 class="page-header">Related Topics
+                                <small>recommended articles </small>
+                            </h1>
+                        </div>
+                    </div>
+
+
+
+                    <!-- Related Items -->
+                    <div class="row">
+                        <?php foreach($relatedArticles as $relatedArticle) { ?>
+                        <?php     $get_article_id =   $relatedArticle['article_id']; ?>
+                        <?php     $images         = $articlesImages->getImagesByArticleId($get_article_id); ?>
+                        <div class="col-md-3 col-xs-6 portfolio-item">
+                            <a href="article.php?id=<?php echo $relatedArticle['article_id']; ?>&subject_id=<?php echo $relatedArticle['article_subject']; ?>">
+                                <img class="img-responsive" src="<?php echo WEBINTY_BACKEND_UPLOADS_PATH; ?>articles/<?php echo $images[0]['image_name']; ?>" alt="<?php echo $relatedArticle['article_title'];  ?>" style="height: 120px;width: 100%">
+                            </a>
+                            <h3>
+                                <a href="article.php?id=<?php echo $relatedArticle['article_id']; ?>&subject_id=<?php echo $relatedArticle['article_subject']; ?>"><?php echo $relatedArticle['article_title'];  ?></a>
+                            </h3>
+
+                        </div>
+                        <?php } ?>
+                    </div>
+
+
+
+                </div>
+
+                <!-- Blog Sidebar Widgets Column -->
+                <div class="col-md-3">
+
+                    <!-- Blog Categories Well -->
+                    <div class="well text-center">
+                        <h4>Subject Categories</h4>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <ul class="list-unstyled">
+                                    <?php foreach($subjects as $subject) {  ?>
+
+                                    <?php  $subjectId = $subject['category_id'];  $subjectName = $subject['category_name']; ?>
+
+                                    <li style="font-weight: bold"><a href="articlesCategory.php?id=<?php echo $subjectId;  ?>"><?php echo $subjectName;  ?> </a></li>
+
+                                    <?php } ?>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- /.row -->
+                    </div>
+
+                    <!-- Side Widget Well -->
+
+
+
+                </div>
+
+            </div>
+            <!-- /.row -->
+
+
+            <hr/>
+
+
+
+        </div>
+    </div>
+</div>

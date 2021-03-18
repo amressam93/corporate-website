@@ -1,0 +1,147 @@
+.pricelist_div{
+
+    margin-bottom: 70px;
+}
+
+
+
+.amressam{
+    display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;flex-wrap: wrap;justify-content: space-between;
+
+}
+
+
+.essam{
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+}
+
+
+.essam ul li {
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.essam ul li span {
+
+    font-weight: bold;font-family: 'Noto Kufi Arabic', sans-serif
+}
+
+
+.price_list_new{
+    position: absolute;
+    width:100%;
+    bottom: 0px;
+
+}
+
+.price_list_new a {
+
+    font-weight: bold;font-family: 'Noto Kufi Arabic', sans-serif
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.shape {
+    border-style: solid;
+    border-width: 0 70px 40px 0;
+    float: right;
+    height: 0px;
+    width: 0px;
+    -ms-transform: rotate(360deg); /* IE 9 */
+    -o-transform: rotate(360deg); /* Opera 10.5 */
+    -webkit-transform: rotate(360deg); /* Safari and Chrome */
+    transform: rotate(360deg);
+}
+.listing {
+    background: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    margin: 15px 0;
+    overflow: hidden;
+}
+.listing:hover {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: rotate scale(1.1);
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+.shape {
+    border-color: rgba(255,255,255,0) #d9534f rgba(255,255,255,0) rgba(255,255,255,0);
+}
+.listing-radius {
+    border-radius: 7px;
+}
+.listing-danger {
+    border-color: #d9534f;
+}
+.listing-danger .shape {
+    border-color: transparent #d9533f transparent transparent;
+}
+.listing-success {
+    border-color: #1ccdca;
+}
+.listing-success .shape {
+    border-color: transparent #1ccdca transparent transparent;
+}
+.listing-default {
+    border-color: #1ccdca;
+}
+.listing-default .shape {
+    border-color: transparent #1ccdca transparent transparent;
+}
+.listing-primary {
+    border-color: #428bca;
+}
+.listing-primary .shape {
+    border-color: transparent #318bca transparent transparent;
+}
+.listing-info {
+    border-color: #5bc0de;
+}
+.listing-info .shape {
+    border-color: transparent #5bc0de transparent transparent;
+}
+.listing-warning {
+    border-color: #f0ad4e;
+}
+.listing-warning .shape {
+    border-color: transparent #f0ad4e transparent transparent;
+}
+.shape-text {
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    position: relative;
+    right: -60px;
+    top: 10px;
+    white-space: nowrap;
+    -ms-transform: rotate(30deg); /* IE 9 */
+    -o-transform: rotate(360deg); /* Opera 10.5 */
+    -webkit-transform: rotate(30deg); /* Safari and Chrome */
+    transform: rotate(30deg);
+}
+.listing-content {
+    padding: 0 20px 10px;
+}
+

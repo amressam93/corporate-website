@@ -1,0 +1,60 @@
+<!-- Page Title -->
+<section class="content_section page_title">
+    <div class="content clearfix">
+        <h1 class="" style="font-weight: bold;font-family: 'Noto Kufi Arabic', sans-serif" >قسم الاسئلة الشائعة </h1>
+        <div class="breadcrumbs">
+            <a href="<?php echo WEBINTY_AR_PATH;  ?>" style="font-weight: bold;font-family: 'Noto Kufi Arabic', sans-serif">الرئيسيه</a>
+            <span class="crumbs-spacer"><i class="ico-angle-left"></i></span>
+            <span style="font-weight: bold;font-family: 'Noto Kufi Arabic', sans-serif" >الاسئلة الشائعة</span>
+        </div>
+    </div>
+</section>
+<!-- End Page Title -->
+
+
+<!-- Section -->
+<section class="content_section">
+    <div class="content row_spacer clearfix">
+
+        <div class="main_title lato small_space">
+            <h2 style="font-weight: bold;font-family: 'Noto Kufi Arabic', sans-serif"><span class="line"><span class="dot"></span></span>الاسئلة الشائعة</h2>
+        </div>
+
+        <span class="spacer20"></span>
+        <!-- -->
+        <!-- Filter Content -->
+        <div class="hm_filter_wrapper content_filter">
+            <div id="options" class="sort_options clearfix">
+                <ul data-option-key="filter" class="option-set clearfix" id="filter-by">
+                    <li><a data-option-value="*" class="selected" href="#"><span style="font-weight: bold;font-family: 'Noto Kufi Arabic', sans-serif">الكل ( <?php echo $NumberOfAllFaqs; ?> )</span><span class="num"></span></a></li>
+                    <?php  foreach($categories as $category) { ?>
+                    <li><a data-option-value=".<?php echo $category['faq_category_id']; ?>" class="" href="#"><span style="font-weight: bold;font-family: 'Noto Kufi Arabic', sans-serif"><?php echo $category['faq_category_name']; ?> ( <?php echo $allfaqs->getNumberOf_FAQS($category['faq_category_id']); ?> )</span><span class="num"></span></a></li>
+                    <?php } ?>
+                </ul>
+            </div>
+            <div class="hm_filter_wrapper_con">
+                <!-- Item -->
+                <?php foreach ($faqs as $faq) { ?>
+                <div class="content_filter_item <?php echo $faq['faq_category']; ?>">
+                    <!-- Accordion -->
+                    <div class="enar_accordion plus_minus" data-type="accordion">
+                        <div class="enar_occ_container" data-expanded="false">
+                            <span class="enar_occ_title" style="font-weight: bold;font-family: 'Noto Kufi Arabic', sans-serif"><?php echo $faq['faq_question']; ?></span>
+                            <div class="enar_occ_content">
+                                <div class="acc_content">
+                                  <?php echo $faq['faq_answer']; ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Accordion -->
+                </div>
+                <!-- End Item -->
+                <?php } ?>
+
+            </div>
+        </div>
+        <!-- -->
+    </div>
+</section>
+<!-- End Section -->

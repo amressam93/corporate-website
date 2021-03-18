@@ -1,0 +1,75 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>User Profile</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="<?php echo WEBINTY_PATH; ?>admin_dashboard/">Home</a>
+            </li>
+            <li>
+                <a href="<?php echo WEBINTY_PATH; ?>admin_dashboard/users.php">All Users</a>
+            </li>
+            <li class="active">
+                <strong><?php echo $user['name']; ?></strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="container">
+<div class="col-lg-10">
+    <div class="ibox float-e-margins">
+        <div class="ibox-title">
+            <h5>User Groups</h5>
+        </div>
+        <div class="ibox-content">
+
+            <div id="deleteUserGroup_result" style="display: none">
+
+            </div>
+
+            <table class="table table-hover">
+                <tr>
+                    <th>Image:</th>
+                    <td><img alt="image" class="img-thumbnail" height="100px" width="100px" src="<?php echo WEBINTY_BACKEND_UPLOADS_PATH ; ?>users/<?php echo $user['image']; ?>" /></td>
+                </tr>
+                <tr>
+                    <th>Name:</th>
+                    <td><?php echo $user['name']; ?></td>
+                </tr>
+                <tr>
+                    <th>UserName:</th>
+                    <td><?php echo $user['username']; ?></td>
+                </tr>
+                <tr>
+                    <th>Email Address:</th>
+                    <td><?php echo $user['email']; ?></td>
+                </tr>
+                <tr>
+                    <th>GroupName:</th>
+                    <td><?php echo $user['group_name']; ?></td>
+                </tr>
+                <tr>
+                    <th>About User:</th>
+                    <td><?php echo $user['about_user']; ?></td>
+                </tr>
+                <tr>
+                    <th>Facebook:</th>
+                    <td><a href="<?php if ($user['facebook']==null) {echo'https://www.facebook.com/';} else {echo $user['facebook'];} ?>" target="_blank">Facebook</a></td>
+                </tr>
+                <tr>
+                    <th>Twitter:</th>
+                    <td><a href="<?php if ($user['twitter']==null) {echo'https://twitter.com/';} else {echo $user['twitter'];} ?>" target="_blank">Twitter</a></td>
+                </tr>
+                <tr>
+                    <th>LinkedIn:</th>
+                    <td><a href="<?php if ($user['linkedin']==null) {echo'https://www.linkedin.com/';} else {echo $user['linkedin'];} ?>" target="_blank">LinkedIn</a></td>
+                </tr>
+                <tr>
+                    <th>GooglePlus:</th>
+                    <td><a href="<?php if ($user['googleplus']==null) {echo'https://plus.google.com/explore';} else {echo $user['googleplus'];} ?>" target="_blank">GooglePlus</a></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+</div>

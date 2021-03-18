@@ -1,0 +1,76 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Add TeamWork Member</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="<?php echo WEBINTY_PATH; ?>admin_dashboard/">Home</a>
+            </li>
+            <li class="active">
+                <strong>Add TeamWork Member</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+
+        <div class="col-lg-8">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Add TeamWork Member <small> Add TeamWork Member </small></h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+
+                        <div class="alert alert-info">
+                            <strong><span style="color: #676a6c">Note: </span> you must include http:// in the URL you enter In SocialMedia link ( FaceBook, Twitter, LinkedIn, GoooglePlus, .. )</strong>
+                        </div>
+
+                        <div id="addTeamWorkResult"></div>
+
+                        <div class="col-sm-12"><h3 class="m-t-none m-b">Add TeamWork Member</h3>
+
+                            <form role="form" id="AddTeamWorkMemberForm" enctype="multipart/form-data">
+
+                                <div class="form-group"><label>Member Name</label> <input type="text" placeholder="Enter Member Name" class="form-control" id="member_name" name="member_name"></div>
+                                <div class="form-group"><label>Member Section</label>
+                                    <select class="form-control" name="member_section" id="member_section">
+
+                                        <?php foreach($sections as $section){
+
+                                       $id   = $section['section_id'];
+                                       $name = $section['section_name'];
+
+                                       echo "<option value='$id'>$name</option>";
+
+                                        } ?>
+
+                                    </select>
+                                </div>
+
+                                <div class="form-group"><label>Member Jop Title</label> <input type="text" placeholder="Enter Jop Title" class="form-control" id="jop_title" name="jop_title"></div>
+                                <div class="form-group"><label>About Member</label> <textarea id="aboutmember" name="aboutmember" ></textarea></div>
+                                <div class="form-group"><label>Member Image</label><input type="file" class="form-control" id="member_image" name="member_image"></div>
+
+                                <div class="form-group"><label>FaceBook Account</label> <input type="text" placeholder="Enter Your FaceBook Account link" class="form-control" id="member_facebook" name="member_facebook"></div>
+                                <div class="form-group"><label>Twitter Account</label> <input type="text" placeholder="Enter Your Twitter Account link" class="form-control" id="member_twitter" name="member_twitter"></div>
+                                <div class="form-group"><label>LinkedIn Account</label> <input type="text" placeholder="Enter Your LinkedIn Account link" class="form-control" id="member_linkedin" name="member_linkedin"></div>
+                                <div class="form-group"><label>GooglePlus Account</label> <input type="text" placeholder="Enter Your GooglePlus Account link" class="form-control" id="member_googleplus" name="member_googleplus"></div>
+
+                                <div>
+                                    <button class="btn btn-sm btn-primary" type="submit" id="teamWorkMember_submit" name="teamWorkMember_submit" style="font-weight: bold"><strong>Add Member</strong></button>
+                                    <span  class="btn btn-sm btn-primary" id="teamWorkMember_spinner" style="font-weight: bold;display: none">Loading <i class="fa fa-refresh fa-spin" style="font-size:18px;color: white"></i></span>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>

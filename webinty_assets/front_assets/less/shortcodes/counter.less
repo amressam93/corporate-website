@@ -1,0 +1,170 @@
+@import "../variables.less";
+
+/* ----------------------------------------------------------------
+	Features
+-----------------------------------------------------------------*/
+
+.white_section {
+    .counter {
+        .value {
+            color: #fff;
+        }
+        .icon {
+            color: #fff;
+        }
+    }
+    .counter_a {
+        .counter {
+            .icon {
+                background: rgba(0, 0, 0, 0.3);
+                color: #fff;
+            }
+            .icon:before {
+                border: 1px solid rgba(255, 255, 255, 0.2);
+            }
+            .title {
+                color: #fff;
+            }
+        }
+    }
+}
+.counter {
+    & > span {
+        display: block;
+        margin-top: 15px;
+        text-align: center;
+        position:relative;
+    }
+    .icon {
+        font-size: 32px;
+        margin: 0 auto;
+        color: @main-color;
+        i {
+            position: relative;
+            z-index: 1;
+        }
+    }
+    .value {
+        font-size: 32px;
+        font-weight: 700;
+        margin-top: 30px;
+        font-family: @main-title-font-family;
+    }
+    .title {
+        font-size: 22px;
+        letter-spacing: 1px;
+        padding-top: 15px;
+        text-transform: capitalize;
+    }
+    .title:before {
+        background: rgba(255, 255, 255, 0.1);
+        width: 50%;
+    }
+}
+.counter_a {
+    .counter {
+        .icon {
+            height: 90px;
+            line-height: 90px;
+            width: 90px;
+        }
+        .icon:before {
+            content: "";
+            display: block;
+            height: 102px;
+            left: -6px;
+            position: absolute;
+            top: -6px;
+            width: 102px;
+            opacity:1;
+            -webkit-transition-delay: 200ms;
+            -moz-transition-delay: 200ms;
+            -ms-transition-delay: 200ms;
+            -o-transition-delay: 200ms;
+            transition-delay: 200ms;
+            transform: scale(1);
+            -webkit-transform: scale(1);
+            -moz-transform: scale(1);
+            -ms-transform: scale(1);
+            -o-transform: scale(1);
+        }
+        .icon:after {
+            background: @main-color;
+            content: "";
+            display: block;
+            height: 90px;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 90px;
+            opacity:0;
+            transform: scale(1.5);
+            -webkit-transform: scale(1.5);
+            -moz-transform: scale(1.5);
+            -ms-transform: scale(1.5);
+            -o-transform: scale(1.5);
+        }
+        .value {
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+        .title {
+            font-weight: 300;
+        }
+    }
+    .counter:hover {
+        .icon {
+            color: #fff;
+        }
+    }
+}
+.white_section .counter .icon, .white_section .counter .title {
+    color:#fff;
+}
+.counter_b {
+    .counter {
+        .title {
+            font-weight: 300;
+        }
+        .title:before {
+            background: rgba(255, 255, 255, 0);
+        }
+        .title:after {
+            background: #fff;
+        }
+    }
+}
+.tabs-body {
+    li {
+        .counter {
+            .title {
+                margin-top: 0;
+            }
+        }
+    }
+}
+.counter .title:before, .counter .title:after {
+    content: "";
+    display: block;
+    height: 1px;
+    position: absolute;
+    top: 0;
+}
+.counter:hover {
+    .icon:after {
+        opacity:1;
+        transform: scale(1);
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+    }
+    .icon:before {
+        opacity:0;
+        transform: scale(1.2);
+        -webkit-transform: scale(1.2);
+        -moz-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        -o-transform: scale(1.2);
+    }
+}

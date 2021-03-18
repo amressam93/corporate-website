@@ -1,0 +1,176 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Public Information</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="<?php echo WEBINTY_PATH; ?>admin_dashboard/">Home</a>
+            </li>
+            <li>
+                <a href="<?php echo WEBINTY_PATH; ?>admin_dashboard/allPublicInfo.php">All Information</a>
+            </li>
+            <li class="active">
+                <strong>Public Information</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="container">
+<div class="col-lg-10">
+    <div class="ibox float-e-margins">
+        <div class="ibox-title">
+            <h5>Public Information</h5>
+        </div>
+        <div class="ibox-content">
+
+            <div class="table-responsive" style="width: 100%;">
+            <table class="table table-hover" style="font-weight: bold">
+                <tr>
+                    <th style="width: 50%">Company Logo:</th>
+                    <td style="width: 50%"><img alt="image" class="img-responsive img-thumbnail" style="max-height: 100px;max-width: 200px" src="<?php echo WEBINTY_BACKEND_UPLOADS_PATH ; ?>general/<?php echo $information['company_logo']; ?>" /></td>
+                </tr>
+                <tr>
+                    <th>Company Name:</th>
+                    <td><?php echo $information['company_name']; ?></td>
+                </tr>
+                <tr>
+                    <th>Company_Address:</th>
+                    <td><?php echo $information['company_address']; ?></td>
+                </tr>
+                <tr>
+                    <th>About Company:</th>
+                    <td><?php echo $information['about_company']; ?></td>
+                </tr>
+                <tr>
+                    <th>Mobile_1:</th>
+                    <td><?php echo $information['mobile_1']; ?></td>
+                </tr>
+                <tr>
+                    <th>Mobile_2:</th>
+                    <td><?php echo $information['mobile_2']; ?></td>
+                </tr>
+                <tr>
+                    <th>Landline Phone Number:</th>
+                    <td><?php echo $information['landline_phone_number']; ?></td>
+                </tr>
+                <tr>
+                    <th>Sales Mobile Number_1:</th>
+                    <td><?php echo $information['sales_phone_number_1']; ?></td>
+                </tr>
+                <tr>
+                    <th>Sales Mobile Number_2:</th>
+                    <td><?php echo $information['sales_phone_number_2']; ?></td>
+                </tr>
+                <tr>
+                    <th>Sales Mobile Number_3:</th>
+                    <td><?php echo $information['sales_phone_number_3']; ?></td>
+                </tr>
+                <tr>
+                    <th>Technical Support Mobile Number_1:</th>
+                    <td><?php echo $information['technical_support_phone_number_1']; ?></td>
+                </tr>
+                <tr>
+                    <th>Technical Support Mobile Number_2:</th>
+                    <td><?php echo $information['technical_support_phone_number_2']; ?></td>
+                </tr>
+                <tr>
+                    <th>Call Center Mobile Number_1:</th>
+                    <td><?php echo $information['call_center_phone_number_1']; ?></td>
+                </tr>
+                <tr>
+                    <th>Call Center Mobile Number_2:</th>
+                    <td><?php echo $information['call_center_phone_number_2']; ?></td>
+                </tr>
+                <tr>
+                    <th>Hosting Service Mobile Number:</th>
+                    <td><?php echo $information['hosting_phone_number']; ?></td>
+                </tr>
+                <tr>
+                    <th>WhatsApp Main Mobile Number:</th>
+                    <td><?php echo $information['whatsapp_main_number']; ?></td>
+                </tr>
+                <tr>
+                    <th>WhatsApp Sales Mobile Number:</th>
+                    <td><?php echo $information['whatsapp_sales_number']; ?></td>
+                </tr>
+                <tr>
+                    <th>Email_Info:</th>
+                    <td><?php echo $information['email_info']; ?></td>
+                </tr>
+                <tr>
+                    <th>Email_Sales:</th>
+                    <td><?php echo $information['email_sales']; ?></td>
+                </tr>
+                <tr>
+                    <th>Email_Marketing:</th>
+                    <td><?php echo $information['email_marketing']; ?></td>
+                </tr>
+                <tr>
+                    <th>Email_Technical_Support:</th>
+                    <td><?php echo $information['email_technical_support']; ?></td>
+                </tr>
+                <tr>
+                    <th>Email_Call_Center:</th>
+                    <td><?php echo $information['email_call_center']; ?></td>
+                </tr>
+                <tr>
+                    <th>Facebook:</th>
+                    <td><a href="<?php echo $information['public_info_facebook']; ?>" target="_blank">Facebook</a></td>
+                </tr>
+                <tr>
+                    <th>Twitter:</th>
+                    <td><a href="<?php echo $information['public_info_twitter']; ?>" target="_blank">Twitter</a></td>
+                </tr>
+                <tr>
+                    <th>LinkedIn:</th>
+                    <td><a href="<?php echo $information['public_info_linkedin']; ?>" target="_blank">LinkedIn</a></td>
+                </tr>
+                <tr>
+                    <th>GooglePlus:</th>
+                    <td><a href="<?php echo $information['public_info_googleplus']; ?>" target="_blank">GooglePlus</a></td>
+                </tr>
+                <tr>
+                    <th>Skype:</th>
+                    <td><a href="<?php echo $information['skype']; ?>" target="_blank">Skype</a></td>
+                </tr>
+                <tr>
+                    <th>Blogger:</th>
+                    <td><a href="<?php echo $information['blogger']; ?>" target="_blank">Blogger</a></td>
+                </tr>
+                <tr>
+                    <th>WordPress:</th>
+                    <td><a href="<?php echo $information['wordpress']; ?>" target="_blank">WordPress</a></td>
+                </tr>
+                <tr>
+                    <th>Tumblr:</th>
+                    <td><a href="<?php echo $information['tumblr']; ?>" target="_blank">Tumblr</a></td>
+                </tr>
+                <tr>
+                    <th>Vimeo:</th>
+                    <td><a href="<?php echo $information['vimeo']; ?>" target="_blank">Vimeo</a></td>
+                </tr>
+                <tr>
+                    <th>Instagram:</th>
+                    <td><a href="<?php echo $information['instagram']; ?>" target="_blank">Instagram</a></td>
+                </tr>
+                <tr>
+                    <th>Google Map:</th>
+                    <td>
+                        <?php echo $information['google_map_iframe']; ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Created AT:</th>
+                    <td><?php echo $information['date']; ?></td>
+                </tr>
+                <tr>
+                    <th>Created By:</th>
+                    <td><?php echo $information['name']; ?></td>
+                </tr>
+            </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+</div>

@@ -1,0 +1,52 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Add TeamWork Section</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="<?php echo WEBINTY_PATH; ?>admin_dashboard/">Home</a>
+            </li>
+            <li>
+                <a href="<?php echo WEBINTY_PATH; ?>admin_dashboard/TeamWorkSections.php">All TeamWork Sections</a>
+            </li>
+            <li class="active">
+                <strong>Add TeamWork Section</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+
+        <div class="col-lg-8">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Add TeamWork Section <small> Simple Add TeamWork Section </small></h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+
+                        <div id="add_teamworkSectionResult"></div>
+
+                        <div class="col-sm-12"><h3 class="m-t-none m-b">Add TeamWork Section</h3>
+
+                            <form role="form" id="AddTeamWorkSection" enctype="multipart/form-data">
+
+                                <div class="form-group"><label>TeamWork Section Name</label> <input type="text" placeholder="Enter TeamWork Section Name" class="form-control" id="section_name" name="teamwork_section_name"></div>
+
+                                <div>
+                                    <button class="btn btn-sm btn-primary" type="submit" id="teamwork_section_submit" name="teamwork_section_submit" style="font-weight: bold"><strong>Add Section</strong></button>
+                                    <span  class="btn btn-sm btn-primary" id="teamwork_section_spinner" style="font-weight: bold;display: none">Loading <i class="fa fa-refresh fa-spin" style="font-size:18px;color: white"></i></span>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>

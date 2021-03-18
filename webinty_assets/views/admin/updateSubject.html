@@ -1,0 +1,91 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2><?php echo $pageTitle; ?></h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="<?php echo WEBINTY_PATH; ?>admin_dashboard/">Home</a>
+            </li>
+            <li>
+                <a href="<?php echo WEBINTY_PATH; ?>admin_dashboard/subjects.php">All Subjects</a>
+            </li>
+            <li class="active">
+                <strong><?php echo $pageTitle; ?></strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="container">
+<div class="wrapper wrapper-content animated fadeInRight">
+
+    <!-- start ajax spinner loader-->
+
+    <div class="row text-center" id="updateSubject_spinner" style="margin-top: 100px; display: none">
+        <div class="col-lg-8">
+            <img src="<?php echo WEBINTY_BACKEND_UPLOADS_PATH ; ?>general/spinner_1.gif">
+        </div>
+    </div>
+
+    <!-- end ajax spinner loader-->
+
+    <div class="row" id="subjectBox">
+        <div class="col-lg-8">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5><?php echo $pageTitle; ?> <small> Simple Update Subject </small></h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div id="updateSubject_Result"></div>
+
+                        <div class="col-sm-12"><h3 class="m-t-none m-b"><?php echo $pageTitle; ?></h3>
+
+                            <form role="form" id="updateSubject" enctype="multipart/form-data">
+
+                                <div class="form-group"><label>Subject Title</label> <input type="text" placeholder="Enter Subject Title" class="form-control" id="subjecttitle" name="subjecttitle" value="<?php echo $subject['subject_title']; ?>"></div>
+                                <div class="form-group"><label>Subject Description</label> <textarea id="edit" name="subjectdescription" ><?php echo $subject['subject_description']; ?></textarea></div><br/>
+                                <div class="form-group"><label>Subject Old Image</label><br/>
+                                    <img class="img-thumbnail" width="100px" height="100px" src="<?php echo WEBINTY_BACKEND_UPLOADS_PATH ; ?>subjects/<?php echo $subject['subject_image']; ?>"><br><br>
+                                    <input type="file" class="form-control" id="subjectimage" name="subjectimage">
+                                </div>
+
+                                <div class="form-group"><label>Subject SEO Title</label> <input type="text" placeholder="Enter Subject SEO Title" class="form-control" id="subjectseotitle" name="subjectseotitle" value="<?php echo $subject['subject_seo_title']; ?>"></div>
+                                <div class="form-group"><label>Subject SEO Description</label> <textarea id="subjectseodescription" name="subjectseodescription" class="form-control" rows="8" ><?php echo $subject['subject_seo_description']; ?></textarea></div><br/>
+                                <div class="form-group"><label>Subject SEO Keywords</label> <input type="text" placeholder="Enter Subject SEO Keywords" class="form-control" id="subjectseokeywords" name="subjectseokeywords" value="<?php echo $subject['subject_seo_keywords']; ?>"></div>
+                                <div class="form-group"><label>Subject SEO Image Alt</label> <input type="text" placeholder="Enter Subject SEO Image Alt" class="form-control" id="subjectseoimagealt" name="subjectseoimagealt" value="<?php echo $subject['subject_seo_image_alt']; ?>"></div>
+                                <div class="form-group"><label>Subject SEO Image Title</label> <input type="text" placeholder="Enter Subject SEO Image Title" class="form-control" id="subjectseoimagetitle" name="subjectseoimagetitle" value="<?php echo $subject['subject_seo_image_title']; ?>"></div>
+                                <div class="form-group"><label>Subject Category</label>
+                                    <select class="form-control" name="subjectCategory" id="subjectCategory">
+
+                                        <?php foreach($categories as $category){
+
+                                        $id   = $category['category_id'];
+                                        $name = $category['category_name'];
+
+                                        ?>
+
+                                        <option value="<?php echo $id; ?>" <?php echo ($subject['subject_category']== $id)? "selected": "" ; ?> ><?php echo $name; ?></option>
+
+                                       <?php } ?>
+
+                                    </select>
+                                </div>
+
+                                <input type="hidden" name="subjectID" value="<?php echo $subject['subject_id'];  ?>">
+
+                                <div>
+                                    <button class="btn btn-sm btn-primary" type="submit" id="updateSubject_submit" name="updateSubject_submit" style="font-weight: bold"><strong>Update Subject</strong></button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+</div>

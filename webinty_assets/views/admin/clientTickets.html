@@ -1,0 +1,205 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2><?php echo $pageTitle; ?></h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="<?php echo WEBINTY_PATH; ?>admin_dashboard/">Home</a>
+            </li>
+            <li class="active">
+                <strong><?php echo $pageTitle; ?></strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="container">
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>All Client Tickets Data with responsive plugin</h5>
+                    </div>
+                    <div class="ibox-content">
+
+                        <div id="clientTickets_result" style="display: none"></div>
+
+                        <table id="amr" class="table table-bordered table-hover dataTables-example">
+                            <thead>
+                            <tr>
+                                <th style="text-align: center">#Client_ID</th>
+                                <th style="text-align: center">Client Name</th>
+                                <th style="text-align: center">Client Phone Number</th>
+                                <th style="text-align: center">Client Status</th>
+                                <th style="text-align: center">Created_by</th>
+                                <th style="text-align: center">Created_AT</th>
+                                <th style="text-align: center">Action</th>
+                            </tr>
+                            </thead>
+                            <tfoot>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                            </tfoot>
+                            <tbody style="text-align: center;font-weight: bold">
+                            <?php  foreach($tickets as $ticket){ ?>
+                            <tr class="gradeX">
+                                <?php $userId =  $ticket['created_by'];  ?>
+                                <?php $user   =  $usersModel->getUser($userId); ?>
+                                <td><?php echo $ticket['client_id']; ?></td>
+                                <td><?php echo $ticket['client_name']; ?></td>
+                                <td><?php echo substr($ticket['client_mobile'], 1); ?></td>
+                                <td><?php if($ticket['client_status']==1) { echo '<span class="label label-primary"> <i class="fa fa-arrow-circle-up"></i> Active</span>'; } if($ticket['client_status']==2) { echo '<span class="label label-warning"> <i class="fa fa-exclamation-circle"></i> Pending..</span>'; }  if($ticket['client_status']==3) { echo '<span class="label label-danger"> <i class="fa fa-arrow-circle-down"></i> Close</span>'; }  ?></td>
+                                <td><?php echo $user['name']; ?></td>
+                                <td><?php echo $ticket['created_at']; ?></td>
+                                <td><div class="btn-group">
+                                    <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle" aria-expanded="false">Action <span class="caret"></span></button>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="ticket.php?id=<?php echo $ticket['client_id']; ?>" class="font-bold"> <i class="fa fa-desktop"></i> Show Details </a></li>
+                                        <li><a href="notes.php?id=<?php echo $ticket['client_id']; ?>" class="font-bold"> <i class="fa fa-comments-o"></i> Get All Notes </a></li>
+                                        <li><a href="updateClientTicket.php?id=<?php echo $ticket['client_id']; ?>" class="font-bold"> <i class="fa fa-refresh"></i> Update </a></li>
+                                        <li><a href="" class="font-bold confirmDeleteClientTicket" id="<?php echo $ticket['client_id']; ?>"> <i class="fa fa-trash"></i> Delete </a></li>
+                                    </ul>
+                                </div></td>
+                            </tr>
+                            <?php } ?>
+                            </tbody>
+
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Mainly scripts -->
+<script src="<?php echo WEBINTY_BACKEND_ASSETS_PATH; ?>js/jquery-2.1.1.js"></script>
+<script src="<?php echo WEBINTY_BACKEND_ASSETS_PATH; ?>js/bootstrap.min.js"></script>
+<script src="<?php echo WEBINTY_BACKEND_ASSETS_PATH; ?>js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="<?php echo WEBINTY_BACKEND_ASSETS_PATH; ?>js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="<?php echo WEBINTY_BACKEND_ASSETS_PATH; ?>js/plugins/jeditable/jquery.jeditable.js"></script>
+
+<!-- Data Tables -->
+<script src="<?php echo WEBINTY_BACKEND_ASSETS_PATH; ?>js/plugins/dataTables/jquery.dataTables.js"></script>
+<script src="<?php echo WEBINTY_BACKEND_ASSETS_PATH; ?>js/plugins/dataTables/dataTables.bootstrap.js"></script>
+<script src="<?php echo WEBINTY_BACKEND_ASSETS_PATH; ?>js/plugins/dataTables/dataTables.responsive.js"></script>
+
+
+<!-- Custom and plugin javascript -->
+<script src="<?php echo WEBINTY_BACKEND_ASSETS_PATH; ?>js/inspinia.js"></script>
+<script src="<?php echo WEBINTY_BACKEND_ASSETS_PATH; ?>js/plugins/pace/pace.min.js"></script>
+
+<script src="<?php echo WEBINTY_BACKEND_ASSETS_PATH; ?>js/plugins/validate/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/additional-methods.min.js"></script>
+
+
+
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
+<script src="https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.1.0/js/dataTables.responsive.js"></script>
+
+<script src="<?php echo WEBINTY_BACKEND_ASSETS_PATH; ?>js/webinty_customize.js"></script>
+
+<!-- Page-Level Scripts -->
+<script>
+    $(document).ready(function() {
+        $('.dataTables-example').DataTable({
+            responsive: true,
+            aaSorting : [[0, 'desc']],
+            "dom": 'T<"clear">lfrtip'
+
+        });
+
+
+        /* Init DataTables */
+        var oTable = $('#editable').dataTable();
+
+
+
+        // Setup - add a text input to each footer cell
+        $('#amr tfoot th').each( function () {
+            var title = $(this).text();
+            $(this).html( '<input  class="form-control input-sm" type="text" placeholder="Search '+title+'" />' );
+        } );
+
+        // DataTable
+        var table = $('#amr').DataTable();
+
+        // Apply the search
+        table.columns().every( function () {
+            var that = this;
+
+            $( 'input', this.footer() ).on( 'keyup change', function () {
+                if ( that.search() !== this.value ) {
+                    that
+                        .search( this.value )
+                        .draw();
+                }
+            } );
+        } );
+
+
+
+
+    });
+
+</script>
+
+<style>
+    body.DTTT_Print {
+        background: #fff;
+
+    }
+    .DTTT_Print #page-wrapper {
+        margin: 0;
+        background:#fff;
+    }
+
+    button.DTTT_button, div.DTTT_button, a.DTTT_button {
+        border: 1px solid #e7eaec;
+        background: #fff;
+        color: #676a6c;
+        box-shadow: none;
+        padding: 6px 8px;
+    }
+    button.DTTT_button:hover, div.DTTT_button:hover, a.DTTT_button:hover {
+        border: 1px solid #d2d2d2;
+        background: #fff;
+        color: #676a6c;
+        box-shadow: none;
+        padding: 6px 8px;
+    }
+
+    .dataTables_filter label {
+        margin-right: 5px;
+
+    }
+
+    tfoot input {
+        width: 100%;
+    }
+
+
+    #amr input {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+
+    tfoot {
+        display: table-header-group;
+    }
+
+
+
+</style>

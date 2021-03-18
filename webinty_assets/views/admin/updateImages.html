@@ -1,0 +1,98 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2><?php echo $pageTitle; ?></h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="<?php echo WEBINTY_PATH; ?>admin_dashboard/">Home</a>
+            </li>
+            <li>
+                <a href="<?php echo WEBINTY_PATH; ?>admin_dashboard/articles.php">All Articles</a>
+            </li>
+            <li class="active">
+                <strong><?php echo $pageTitle; ?></strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="container">
+<div class="col-lg-12" style="margin-bottom: 20px">
+    <div class="ibox float-e-margins">
+        <div class="ibox-title">
+            <h5><?php echo $pageTitle; ?></h5>
+        </div>
+        <div class="ibox-content">
+
+            <div id="articleImages_result" style="display: none">
+
+            </div>
+
+            <!-- add image     -->
+
+            <div class="text-right">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal5">
+                    Add Image
+                </button>
+            </div>
+            <div class="modal inmodal fade" id="myModal5" tabindex="-1" role="dialog"  aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <h4 class="modal-title">Modal title</h4>
+                            <small class="font-bold">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</small>
+                        </div>
+
+                        <div class="modal-body">
+                            <div id="imageOfArticleResult"></div>
+                            <form id="addArticleImage_form" method="post" enctype="multipart/form-data">
+                                <p><label>Select Image</label>
+                                <div id="image_preview" class="bd-example bd-example-images col-md-12" ></div>
+                                <input type="file" class="form-control" id="articleimage" name="imagesOfArticle[]" onchange="preview_image();"  multiple/><br>
+                                <input type="hidden" name="action" id="action" value="insert" />
+                                <input type="hidden" name="image_id" id="image_id" />
+                                <button type="submit" name="addImageArticle" id="addImageArticle" class="btn btn-primary">Add Image</button>
+                                <span  class="btn btn-sm btn-primary" id="addImageArticle_spinner" style="font-weight: bold;display: none">Loading <i class="fa fa-refresh fa-spin" style="font-size:18px;color: white"></i></span>
+                            </form>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--  end add image    -->
+
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>#ID</th>
+                    <th>Image</th>
+                    <th>Created_AT</th>
+                    <th>Delete</th>
+                </tr>
+                </thead>
+                <tbody style="font-weight: bold;">
+
+                <?php foreach($images as $image){ ?>
+                <tr>
+                    <td style="vertical-align: middle"><?php echo $image['image_id']; ?></td>
+                    <td>
+                        <img class="img-thumbnail" width="100px" height="100px" src="<?php echo WEBINTY_BACKEND_UPLOADS_PATH ; ?>articles/<?php echo $image['image_name']; ?>" alt="<?php echo $image['article_title']; ?>">
+                    </td>
+                    <td style="vertical-align: middle"><?php echo $image['created_at']; ?></td>
+                    <td style="vertical-align: middle">
+                        <button type="button" class="btn btn-w-m btn-danger confirmDeleteImageArticle" id="<?php echo $image['image_id']; ?>">Delete</button>
+                    </td>
+                </tr>
+
+                <?php } ?>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</div>

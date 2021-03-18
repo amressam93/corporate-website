@@ -1,0 +1,85 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Add Public Informations</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="<?php echo WEBINTY_PATH; ?>admin_dashboard/">Home</a>
+            </li>
+            <li class="active">
+                <strong>Add Public Informations</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+
+        <div class="col-lg-8">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Add Public Informations <small> Simple Add Public Informations </small></h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+
+                        <div class="alert alert-info">
+                            <strong><span style="color: #676a6c">Note: </span> you must include http:// in the URL you enter In SocialMedia link ( FaceBook, Twitter, LinkedIn, GoooglePlus, .. )</strong>
+                        </div>
+
+                        <div id="publicInfoResult"></div>
+
+                        <div class="col-sm-12"><h3 class="m-t-none m-b">Add Public Informations</h3>
+
+                            <form role="form" id="AddPublicInfoForm" enctype="multipart/form-data">
+
+                                <div class="form-group"><label>Company Name:</label> <input type="text" placeholder="Enter Your Company Name" class="form-control" id="company_name" name="company_name"></div>
+                                <div class="form-group"><label>About Company:</label> <textarea id="edit" name="aboutcompany" ></textarea></div>
+                                <div class="form-group"><label>Company Address:</label> <input type="text" placeholder="Enter Company Address" class="form-control" id="company_address" name="company_address"></div>
+                                <div class="form-group"><label>Company Logo:</label><input type="file" class="form-control" id="company_logo" name="company_logo"></div>
+                                <div class="form-group"><label>Mobile_1:</label> <input type="number" placeholder="Enter Mobile Number" class="form-control" id="mobile1" name="mobile1"></div>
+                                <div class="form-group"><label>Mobile_2:</label> <input type="number" placeholder="Enter Mobile Number" class="form-control" id="mobile2" name="mobile2"></div>
+                                <div class="form-group"><label>Landline Phone Number:</label> <input type="number" placeholder="Enter Landline Phone Number" class="form-control" id="landline_phone_number" name="landline_phone_number"></div>
+                                <div class="form-group"><label>Sales Mobile Number_1:</label> <input type="number" placeholder="Enter Sales Mobile Number" class="form-control" id="sales_mobile_number_1" name="sales_mobile_number_1"></div>
+                                <div class="form-group"><label>Sales Mobile Number_2:</label> <input type="number" placeholder="Enter Sales Mobile Number" class="form-control" id="sales_mobile_number_2" name="sales_mobile_number_2"></div>
+                                <div class="form-group"><label>Sales Mobile Number_3:</label> <input type="number" placeholder="Enter Sales Mobile Number" class="form-control" id="sales_mobile_number_3" name="sales_mobile_number_3"></div>
+                                <div class="form-group"><label>Technical Support Mobile Number_1:</label> <input type="number" placeholder="Enter Technical Support Mobile Number" class="form-control" id="Technical_Support_Mobile_number_1" name="Technical_Support_Mobile_number_1"></div>
+                                <div class="form-group"><label>Technical Support Mobile Number_2:</label> <input type="number" placeholder="Enter Technical Support Mobile Number" class="form-control" id="Technical_Support_Mobile_number_2" name="Technical_Support_Mobile_number_2"></div>
+                                <div class="form-group"><label>Customer Service Mobile Number_1:</label> <input type="number" placeholder="Enter Customer Service Mobile Number" class="form-control" id="customer_service_Mobile_number_1" name="customer_service_Mobile_number_1"></div>
+                                <div class="form-group"><label>Customer Service Mobile Number_2:</label> <input type="number" placeholder="Enter Customer Service Mobile Number" class="form-control" id="customer_service_Mobile_number_2" name="customer_service_Mobile_number_2"></div>
+                                <div class="form-group"><label>Hosting Service Mobile Number:</label> <input type="number" placeholder="Enter Hosting Service Mobile Number" class="form-control" id="hosting_service_Mobile_number" name="hosting_service_Mobile_number"></div>
+                                <div class="form-group"><label>WhatsApp Main Mobile Number:</label> <input type="number" placeholder="Enter WhatsApp Mobile Number" class="form-control" id="whatsapp_main_mobile_number" name="whatsapp_main_mobile_number"></div>
+                                <div class="form-group"><label>WhatsApp Sales Mobile Number:</label> <input type="number" placeholder="Enter WhatsApp Mobile Number" class="form-control" id="whatsapp_sales_mobile_number" name="whatsapp_sales_mobile_number"></div>
+                                <div class="form-group"><label>Email_info:</label> <input type="email" placeholder="Enter Email Address" class="form-control" id="email_info" name="email_info"></div>
+                                <div class="form-group"><label>Email_sales:</label> <input type="email" placeholder="Enter Email Address" class="form-control" id="email_sales" name="email_sales"></div>
+                                <div class="form-group"><label>Email_marketing:</label> <input type="email" placeholder="Enter Email Address" class="form-control" id="email_marketing" name="email_marketing"></div>
+                                <div class="form-group"><label>Email_Technical_Support:</label> <input type="email" placeholder="Enter Email Address" class="form-control" id="email_technical" name="email_technical"></div>
+                                <div class="form-group"><label>Email_Call_Center:</label> <input type="email" placeholder="Enter Email Address" class="form-control" id="email_callcenter" name="email_callcenter"></div>
+                                <div class="form-group"><label>FaceBook:</label> <input type="text" placeholder="Enter Your FaceBook link" class="form-control" id="facebook" name="facebook"></div>
+                                <div class="form-group"><label>Twitter:</label> <input type="text" placeholder="Enter Your Twitter link" class="form-control" id="twitter" name="twitter"></div>
+                                <div class="form-group"><label>LinkedIn:</label> <input type="text" placeholder="Enter Your LinkedIn link" class="form-control" id="linkedin" name="linkedin"></div>
+                                <div class="form-group"><label>GooglePlus:</label> <input type="text" placeholder="Enter Your GooglePlus link" class="form-control" id="googleplus" name="googleplus"></div>
+                                <div class="form-group"><label>Skype:</label> <input type="text" placeholder="Enter Your Skype link" class="form-control" id="skype" name="skype"></div>
+                                <div class="form-group"><label>Blogger:</label> <input type="text" placeholder="Enter Your Blogger link" class="form-control" id="blogger" name="blogger"></div>
+                                <div class="form-group"><label>WordPress:</label> <input type="text" placeholder="Enter Your WordPress link" class="form-control" id="wordpress" name="wordpress"></div>
+                                <div class="form-group"><label>Tumblr:</label> <input type="text" placeholder="Enter Your Tumblr link" class="form-control" id="tumblr" name="tumblr"></div>
+                                <div class="form-group"><label>Vimeo:</label> <input type="text" placeholder="Enter Your Vimeo link" class="form-control" id="vimeo" name="vimeo"></div>
+                                <div class="form-group"><label>Instagram:</label> <input type="text" placeholder="Enter Your Instagram link" class="form-control" id="instagram" name="instagram"></div>
+                                <div class="form-group"><label>Google Map Iframe:</label> <textarea type="text" placeholder="Enter Google Map Iframe Tag" class="form-control" id="google_map_iframe" name="google_map_iframe"></textarea></div>
+
+                                <div>
+                                    <button class="btn btn-sm btn-primary" type="submit" id="publicInfo_submit" name="publicInfo_submit" style="font-weight: bold"><strong>Add Info</strong></button>
+                                    <span  class="btn btn-sm btn-primary" id="publicInfo_spinner" style="font-weight: bold;display: none">Loading <i class="fa fa-refresh fa-spin" style="font-size:18px;color: white"></i></span>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>

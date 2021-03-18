@@ -1,0 +1,55 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2><?php echo $pageTitle; ?></h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="<?php echo WEBINTY_PATH; ?>admin_dashboard/">Home</a>
+            </li>
+            <li>
+                <a href="<?php echo WEBINTY_PATH; ?>admin_dashboard/ticket.php?id=<?php echo $ticket['client_id']; ?>">Client Ticket : <?php echo $ticket['client_name']; ?></a>
+            </li>
+            <li class="active">
+                <strong><?php echo $pageTitle; ?></strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="container">
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+
+            <div class="col-lg-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>Add Note <small> Simple Add Note </small></h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="row">
+
+                            <div id="addClientNote_Result"></div>
+
+                            <div class="col-sm-12"><h3 class="m-t-none m-b">Add Note</h3>
+
+                                <form role="form" id="AddClientNoteForm" enctype="multipart/form-data">
+
+                                    <div class="form-group"><label>Client Note</label> <textarea id="edit" name="clientNote" ></textarea></div>
+                                    <input type="hidden" name="clienTicketID" value="<?php echo $ticket['client_id']; ?>">
+
+                                    <div>
+                                        <button class="btn btn-sm btn-primary" type="submit" id="addClientNote_submit" name="addClientNote_submit" style="font-weight: bold"><strong>Add Note</strong></button>
+                                        <span  class="btn btn-sm btn-primary" id="addClientNote_spinner" style="font-weight: bold;display: none">Loading <i class="fa fa-refresh fa-spin" style="font-size:18px;color: white"></i></span>
+                                    </div>
+                                </form>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>

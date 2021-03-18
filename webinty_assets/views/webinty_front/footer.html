@@ -1,0 +1,238 @@
+
+<!-- footer -->
+<footer id="footer">
+    <div class="container row_spacer clearfix">
+        <div class="rows_container clearfix">
+
+
+            <div class="col-md-3">
+
+                <?php foreach($publicData as $data) { ?>
+                <div class="footer_row">
+                    <h6 class="footer_title" style="font-weight:bold;font-family: 'Noto Kufi Arabic', sans-serif;">نبذه عن الشركه</h6>
+                    <img alt="Enar" src="<?php echo WEBINTY_BACKEND_ASSETS_PATH ; ?>front_assets/images/logo-light.png">
+                    <span class="footer_desc" style="font-family: 'Noto Kufi Arabic', sans-serif;">
+							<?php echo $data['about_company']; ?>
+						</span>
+                    <a href="#" class="black_button">
+                        <i class="ico-angle-left"></i><span style="font-family: 'Noto Kufi Arabic', sans-serif;">اقرأ المزيد</span>
+                    </a>
+                </div>
+                <div class="footer_row">
+                    <h6 class="footer_title" style="font-family: 'Noto Kufi Arabic', sans-serif;">تابعنا علي </h6>
+                    <div class="widget_block">
+                        <div class="social_links_widget clearfix">
+                            <?php foreach($publicData as $data) { ?>
+                            <a href="<?php echo $data['public_info_facebook']; ?>" target="_blank" class="facebook"><i class="ico-facebook4"></i></a>
+                            <a href="<?php echo $data['public_info_twitter']; ?>" target="_blank" class="twitter"><i class="ico-twitter4"></i></a>
+                            <a href="<?php echo $data['public_info_googleplus']; ?>" target="_blank" class="googleplus"><i class="ico-google-plus"></i></a>
+                            <a href="<?php echo $data['public_info_linkedin']; ?>" target="_blank" class="linkedin"><i class="ico-linkedin3"></i></a>
+                            <a href="<?php echo $data['vimeo']; ?>" target="_blank" class="vimeo"><i class="ico-vimeo"></i></a>
+                            <?php } ?>
+                            <!-- <a href="skype:#?call" class="skype"><i class="ico-skype2"></i></a>
+                            <a href="#" target="_blank" class="rss"><i class="ico-rss"></i></a>
+                            <a href="#" target="_blank" class="flickr"><i class="ico-flickr2"></i></a>
+                            <a href="#" target="_blank" class="picasa"><i class="ico-picassa"></i></a>
+                            <a href="#" target="_blank" class="tumblr"><i class="ico-tumblr"></i></a>
+
+                            <a href="#" target="_blank" class="dribble"><i class="ico-dribbble"></i></a>
+                            <a href="#" target="_blank" class="soundcloud"><i class="ico-soundcloud"></i></a>
+                            <a href="#" target="_blank" class="instagram"><i class="ico-instagram3"></i></a>
+                            <a href="#" target="_blank" class="pinterest"><i class="ico-pinterest-p"></i></a>
+                            <a href="#" target="_blank" class="youtube"><i class="ico-youtube3"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+
+                <?php } ?>
+
+
+            </div><!-- Grid -->
+
+
+
+
+            <div class="col-md-3">
+                <div class="footer_row">
+                    <h6 class="footer_title" style="font-weight:bold;font-family: 'Noto Kufi Arabic', sans-serif;">تواصل معنا </h6>
+                    <span class="footer_desc" style="font-weight: bold;font-family: 'Noto Kufi Arabic', sans-serif;">
+							مرحباً , نحن هنا لخدمتكم وسنكون سعداء بالاجابة عن اي استفسارات حول خدماتنا عبر الهاتف او من خلال البريد الالكتروني بحد اقصي 12 ساعه
+						</span>
+                    <ul class="icon_details_list">
+                        <li style="font-weight: bold;"><?php echo $public_info['email_info']; ?> <i class="ico-mention"></i> </li>
+                        <li style="font-weight: bold;"><?php echo $public_info['email_sales']; ?> <i class="ico-mention"></i> </li>
+                        <li style="font-weight: bold;"> <i class="ico-phone2"> </i> <span class="title" style="font-weight: bold;font-family: 'Noto Kufi Arabic', sans-serif">المبيعات  : </span> <?php echo $public_info['mobile_1']; ?> (002) </li>
+                        <li style="font-weight: bold;"> <i class="ico-mobile"> </i> <span class="title" style="font-weight: bold;font-family: 'Noto Kufi Arabic', sans-serif">خدمه العملاء  : </span> <?php echo $public_info['mobile_1']; ?> (002) </li>
+                        <li style="font-weight: bold;font-family: 'Noto Kufi Arabic', sans-serif;"><i class="ico-map-marker2"></i> <?php echo $public_info['company_address']; ?> </li>
+                    </ul>
+
+                </div>
+
+                <div class="footer_row">
+                    <h6 class="footer_title" style="font-weight:bold;font-family: 'Noto Kufi Arabic', sans-serif;">مواعيد العمل </h6>
+                    <ul class="icon_details_list">
+                        <li style="font-weight: bold;font-family: 'Noto Kufi Arabic', sans-serif;"> <i class="ico-clock-o" style="color: darkgreen"> </i>الاحد : 9 صباحا - 6 مساءا</li>
+                        <li style="font-weight: bold;font-family: 'Noto Kufi Arabic', sans-serif;"> <i class="ico-clock-o" style="color: darkgreen"> </i>الاثنين : 9 صباحا - 6 مساءا</li>
+                        <li style="font-weight: bold;font-family: 'Noto Kufi Arabic', sans-serif;"> <i class="ico-clock-o" style="color: darkgreen"> </i>الثلاثاء : 9 صباحا - 6 مساءا</li>
+                        <li style="font-weight: bold;font-family: 'Noto Kufi Arabic', sans-serif;"> <i class="ico-clock-o" style="color: darkgreen"> </i>الاربعاء : 9 صباحا - 6 مساءا</li>
+                        <li style="font-weight: bold;font-family: 'Noto Kufi Arabic', sans-serif;"> <i class="ico-clock-o" style="color: darkgreen"> </i>الخميس : 9 صباحا : 6 مساءا</li>
+                        <li style="font-weight: bold;font-family: 'Noto Kufi Arabic', sans-serif;"> <i class="ico-clock-o" style="color: red"> </i>الجمعه : مغلق</li>
+                        <li style="font-weight: bold;font-family: 'Noto Kufi Arabic', sans-serif;"> <i class="ico-clock-o" style="color: red"> </i>السبت : مغلق</li>
+
+
+                    </ul>
+
+                </div>
+            </div><!-- Grid -->
+
+
+
+
+            <div class="col-md-3">
+                <div class="footer_row">
+                    <h6 class="footer_title" style="font-weight: bold;font-family: 'Noto Kufi Arabic', sans-serif;">الخدمات</h6>
+                    <div class="tagcloud clearfix">
+                        <a href="#" style="font-weight: bold;font-family: 'Noto Kufi Arabic', sans-serif;"><span class="tag">تصميم وبرمجه المواقع</span></a>
+                        <a href="#" style="font-weight: bold;font-family: 'Noto Kufi Arabic', sans-serif;"><span class="tag">تصميم وبرمجه المواقع</span></a>
+                        <a href="#" style="font-weight: bold;font-family: 'Noto Kufi Arabic', sans-serif;"><span class="tag">تصميم وبرمجه المواقع</span></a>
+                        <a href="#" style="font-weight: bold;font-family: 'Noto Kufi Arabic', sans-serif;"><span class="tag">تصميم وبرمجه المواقع</span></a>
+                        <a href="#" style="font-weight: bold;font-family: 'Noto Kufi Arabic', sans-serif;"><span class="tag">تصميم وبرمجه المواقع</span></a>
+                        <a href="#" style="font-weight: bold;font-family: 'Noto Kufi Arabic', sans-serif;"><span class="tag">تصميم وبرمجه المواقع</span></a>
+                        <a href="#" style="font-weight: bold;font-family: 'Noto Kufi Arabic', sans-serif;"><span class="tag">تصميم وبرمجه المواقع</span></a>
+                        <a href="#" style="font-weight: bold;font-family: 'Noto Kufi Arabic', sans-serif;"><span class="tag">تصميم وبرمجه المواقع</span></a>
+                        <a href="#" style="font-weight: bold;font-family: 'Noto Kufi Arabic', sans-serif;"><span class="tag">تصميم وبرمجه المواقع</span></a>
+                    </div>
+                </div>
+
+
+            </div><!-- Grid -->
+
+            <!--
+            <div class="col-md-3">
+
+                <div class="footer_row">
+
+                    <h6 class="footer_title" style="font-family: 'Noto Kufi Arabic', sans-serif;">خدماتنا</h6>
+
+                    <ul class="recent_posts_list">
+                        <li class="clearfix">
+                            <a href="#">
+
+                                <span style="font-family: 'Noto Kufi Arabic', sans-serif;">تصميم مواقع</span>
+                            </a>
+
+                            <span class="recent_post_detail">Web Design</span>
+                        </li>
+                        <li class="clearfix">
+                            <a href="#">
+
+                                <span style="font-family: 'Noto Kufi Arabic', sans-serif;">تصميم مواقع</span>
+                            </a>
+
+                            <span class="recent_post_detail">Web Design</span>
+                        </li>
+                        <li class="clearfix">
+                            <a href="#">
+
+                                <span style="font-family: 'Noto Kufi Arabic', sans-serif;">تصميم مواقع</span>
+                            </a>
+
+                            <span class="recent_post_detail">Web Design</span>
+                        </li>
+                        <li class="clearfix">
+                            <a href="#">
+
+                                <span style="font-family: 'Noto Kufi Arabic', sans-serif;">تصميم مواقع</span>
+                            </a>
+
+                            <span class="recent_post_detail">Web Design</span>
+                        </li>
+                    </ul>
+
+
+
+                </div>
+
+            </div>
+
+            -->
+
+            <div class="col-md-3">
+                <div class="footer_row">
+                    <h6 class="footer_title" style="font-weight: bold;font-family: 'Noto Kufi Arabic', sans-serif;">اخر المقالات</h6>
+                    <div class="tagcloud clearfix">
+                        <a href="#" style="font-weight: bold;font-family: 'Noto Kufi Arabic', sans-serif;"><span class="tag">تصميم وبرمجه المواقع</span></a>
+                        <a href="#" style="font-weight: bold;font-family: 'Noto Kufi Arabic', sans-serif;"><span class="tag">تصميم وبرمجه المواقع</span></a>
+                    </div>
+                </div>
+
+                <div class="footer_row">
+                    <h6 class="footer_title">Custom Video</h6>
+                    <div class="centered">
+                        <a class="popup-youtube vid_con" href="http://www.youtube.com/watch?v=0O2aH4XLbto">
+                            <span class="vid_type_icon"><i class="ico-youtube3"></i></span>
+                            <span class="vid_icon"><i class="ico-playback-play"></i></span>
+                            <img alt="Awesome Product" src="<?php echo WEBINTY_BACKEND_ASSETS_PATH ; ?>front_assets/images/blog/blog6.jpg">
+                        </a>
+                    </div>
+                </div>
+            </div><!-- Grid -->
+
+
+
+        </div>
+    </div>
+
+
+
+    <div class="footer_copyright">
+        <div class="container clearfix">
+            <div class="col-md-6">
+                <span class="footer_copy_text" style="font-family: 'Noto Kufi Arabic', sans-serif;">جميع الحقوق محفوظة © 2017 شركة <a href="<?php echo WEBINTY_AR_PATH ?>">ويب ينتي</a></span>
+            </div>
+            <div class="col-md-6 clearfix">
+                <ul class="footer_menu clearfix">
+                    <li><a href="#"><span style="font-family: 'Noto Kufi Arabic', sans-serif;"> الرئيسيه </span></a></li>
+                    <li>/</li>
+                    <li><a href="#"><span style="font-family: 'Noto Kufi Arabic', sans-serif;">عن الشركه</span></a></li>
+                    <li>/</li>
+                    <li><a href="#"><span style="font-family: 'Noto Kufi Arabic', sans-serif;">الاسئله الشائعه </span></a></li>
+                    <li>/</li>
+                    <li><a href="#"><span style="font-family: 'Noto Kufi Arabic', sans-serif;">اتصل بنا</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- End footer -->
+
+<a href="https://api.whatsapp.com/send?phone=+201287258368&text=اهلا وسهلا بكم سيتم الرد عليكم في خلال 12 ساعه كحد اقصي " class="whatsapp_float" target="_blank">
+    <i class="fab fa-whatsapp whatsapp_my-float"></i>
+</a>
+
+<a href="https://www.messenger.com/t/webinty/" class="facebook_messenger_float" target="_blank">
+    <i class="fab fa-facebook-messenger facebook_messenger_my-float"></i>
+</a>
+
+
+<a href="tel:00201287258368" class="phone_float">
+    <i class="fas fa-phone phone_my-float"></i>
+</a>
+
+<a href="#0" class="hm_go_top"></a>
+
+</div>
+<!-- End wrapper -->
+
+<!-- bootstrap files start -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="<?php echo WEBINTY_BACKEND_ASSETS_PATH ; ?>front_assets/js/jquery.js"><\/script>')</script>
+<!-- bootstrap files end -->
+<script src="<?php echo WEBINTY_BACKEND_ASSETS_PATH ; ?>front_assets/js/plugins.js"></script>
+<script src="<?php echo WEBINTY_BACKEND_ASSETS_PATH ; ?>front_assets/js/jquery.themepunch.tools.min.js" type="text/javascript"></script>
+<script src="<?php echo WEBINTY_BACKEND_ASSETS_PATH ; ?>front_assets/js/jquery.themepunch.revolution.min.js" type="text/javascript"></script>
+<script src="<?php echo WEBINTY_BACKEND_ASSETS_PATH ; ?>front_assets/js/isotope.pkgd.min.js"></script>
+<!-- this is where we put our custom functions -->
+<script type="text/javascript" src="<?php echo WEBINTY_BACKEND_ASSETS_PATH ; ?>front_assets/js/functions.js"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Add Subject</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="<?php echo WEBINTY_PATH; ?>admin_dashboard/">Home</a>
+            </li>
+            <li class="active">
+                <strong>Add Subject</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+
+    <!-- start ajax spinner loader-->
+
+    <div class="row text-center" id="addSubject_spinner" style="margin-top: 100px; display: none">
+        <div class="col-lg-8">
+        <img src="<?php echo WEBINTY_BACKEND_UPLOADS_PATH ; ?>general/spinner_1.gif">
+        </div>
+    </div>
+
+    <!-- end ajax spinner loader-->
+
+    <div class="row" id="subjectBox">
+        <div class="col-lg-8">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Add Subject <small> Simple Add Subject </small></h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div id="addSubject_Result"></div>
+
+                        <div class="col-sm-12"><h3 class="m-t-none m-b">Add Subject</h3>
+
+                            <form role="form" id="AddSubject" enctype="multipart/form-data">
+
+                                <div class="form-group"><label>Subject Title</label> <input type="text" placeholder="Enter Subject Title" class="form-control" id="subjecttitle" name="subjecttitle"></div>
+                                <div class="form-group"><label>Subject Description</label> <textarea id="edit" name="subjectdescription" ></textarea></div><br/>
+                                <div class="form-group"><label>Subject Image</label>
+                                    <div id="image_preview" class="bd-example bd-example-images col-md-12" ></div><br/>
+                                    <input type="file" class="form-control" id="articleimage" name="subjectimage" onchange="preview_image();">
+                                </div>
+                                <div class="form-group"><label>Subject SEO Title</label> <input type="text" placeholder="Enter Subject SEO Title" class="form-control" id="subjectseotitle" name="subjectseotitle"></div>
+                                <div class="form-group"><label>Subject SEO Description</label> <textarea id="subjectseodescription" name="subjectseodescription" class="form-control" rows="8" ></textarea></div><br/>
+                                <div class="form-group"><label>Subject SEO Keywords</label> <input type="text" placeholder="Enter Subject SEO Keywords" class="form-control" id="subjectseokeywords" name="subjectseokeywords"></div>
+                                <div class="form-group"><label>Subject SEO Image Alt</label> <input type="text" placeholder="Enter Subject SEO Image Alt" class="form-control" id="subjectseoimagealt" name="subjectseoimagealt"></div>
+                                <div class="form-group"><label>Subject SEO Image Title</label> <input type="text" placeholder="Enter Subject SEO Image Title" class="form-control" id="subjectseoimagetitle" name="subjectseoimagetitle"></div>
+                                <div class="form-group"><label>Subject Category</label>
+                                    <select class="form-control" name="subjectCategory" id="subjectCategory">
+
+                                        <?php foreach($categories as $category){
+
+                                       $id   = $category['category_id'];
+                                       $name = $category['category_name'];
+
+                                       echo "<option value='$id'>$name</option>";
+
+                                        } ?>
+
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <button class="btn btn-sm btn-primary" type="submit" id="addSubject_submit" name="addSubject_submit" style="font-weight: bold"><strong>Add Subject</strong></button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>

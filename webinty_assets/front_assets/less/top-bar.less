@@ -1,0 +1,315 @@
+@import "variables.less";
+
+/*-------------------------------------------------------------
+       Top Bar	
+-------------------------------------------------------------*/
+
+.topbar {
+    background: @topbar-bg-black;
+    position: relative;
+    z-index: 1001;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.top-socials{
+	text-align:right;	
+}
+.top_expande {
+	background: #fff;
+	border-top: 1px solid #e4e4e4;
+    display: none;
+    height: 20px;
+    width: 100%;
+	cursor: pointer;
+	color: @main-color;
+	position: relative;
+	font-size: 16px;
+	
+	&.not_expanded {
+		background: #F9F9F9;
+	}
+	
+	i {
+		left: 50%;
+		margin-left: -4px;
+		position: absolute;
+		top: 1px;
+	}
+	
+	&.not_expanded i.no_exp, &:not(.not_expanded) i.exp{
+		opacity: 1;
+	}
+	&.not_expanded i.exp, i.no_exp{
+		opacity: 0;
+	}
+}
+
+.topbar{
+    &.white_topbar{
+		background: #fff;
+	}
+	&.large_topbar {
+		padding: 25px 0;
+	}
+	.top_login > i {
+		font-size: @topbar-font-size;
+	}
+}
+
+.topbar #logo{
+    > a {
+		max-height: 60px;
+		display: inline-block;
+		vertical-align: top;
+	}
+	> a img {
+		display: block;
+		max-width: 100%;
+		position: relative;
+		vertical-align: top;
+		max-height: 60px;
+	}
+}
+
+.top_details{
+	.title, .title a, > span > a, > span, > div, > div > a {
+		color: @topbar-font-color;
+	}
+	> span > a{
+		text-transform: uppercase;
+	}
+	> span .icon.ico-key8 {
+		font-size: @topbar-font-size;
+	}
+	> span, > div {
+		display: inline-block;
+		margin-right: 40px;
+		padding: 12px 0;
+		font-size: 11px;
+	}
+	.title{
+		margin: 0 5px 0 0px;
+		text-transform: uppercase;
+	}
+	> span .icon {
+		margin-right: 8px;
+	}
+	.top_login_title {
+		margin-right: 0;
+	}
+}
+
+.top-socials{
+	> a {
+		color: #808c8c;
+		display: inline-block;
+		font-size: @font-size-main;
+		height: 32px;
+		line-height: 34px;
+		margin-top: 4px;
+		outline: medium none;
+		position: relative;
+		text-align: center;
+		text-decoration: none;
+		width: 32px;
+		z-index: 1;
+		
+		&:hover{
+			color:#fff;
+			z-index:10;
+		}
+		
+		> span.soc_name {
+			opacity: 0;
+			background: #070809;
+			display: block;
+			font-size: 12px;
+			height: 32px;
+			left: 14px;
+			line-height: 31px;
+			color:#808c8c;
+			position: absolute;
+			top: 0;
+			z-index: 0;
+			font-style: italic;
+		}
+		
+		> span.soc_icon_bg{
+			background: rgba(0,0,0,50);
+			display:block;
+			content:"";	
+			width: 32px;
+			height: 32px;
+			line-height: 32px;
+			position:absolute;
+			top:0;
+			left:0;
+			z-index: 1;
+			opacity:0;
+		}
+		> i{
+			position:relative;
+			z-index:1;
+		}
+		&:hover > span.soc_name{
+			width:auto;
+			padding-left: 28px;
+			opacity:1;
+		}
+		&:hover > span.soc_icon_bg{
+			top:0px;
+			left:0px;
+			opacity:1;
+		}
+		&:last-child > span.soc_name{
+			right: 11px;
+			left: auto;
+		}
+		&:last-child:hover > span.soc_name {
+			padding-left: 12px;
+			padding-right: 28px;
+		}
+		&:last-child span.soc_name:before {
+			display: none;
+		}
+	}
+	
+	span.soc_name{
+	    &:after, &:before {
+			background: #070809;	
+			content: "";
+			display: block;
+			height: 32px;
+			position: absolute;
+			top: 0;
+			width: 32px;
+			z-index: -1;
+		}
+		
+		&:after{
+			right: -12px;
+		}
+		
+		&:before{
+			left: -14px;
+		}
+	}
+	
+}
+
+.zoom-anim-dialog.login_popup{
+    background: none;
+    padding: 0;
+}
+
+/*-------------------------------------------------------------
+                   Light Header - Top Bar
+-------------------------------------------------------------*/
+
+.light_header .topbar {
+    background: #f9f9f9;
+	border-bottom: 1px solid #e4e4e4;
+}
+.light_header .top-socials > a > span.soc_icon_bg {
+    background: rgba(0, 0, 0, 0.15);
+}
+.light_header .top-socials span.soc_name:after, .light_header .top-socials span.soc_name:before, 
+.light_header .top-socials > a > span.soc_name {
+    background: @main-color;
+    color: #fff;
+}
+.topbar.topbar_colored {
+    background: @main-color;
+    border-bottom: none;
+}
+.topbar_colored .top_details .title, 
+.topbar_colored .top_details .title a, 
+.topbar_colored .top_details > span > a, 
+.topbar_colored .top_details > span, 
+.topbar_colored .top_details > div > a, 
+.topbar_colored .top_details > div {
+    color: #fff;
+}
+.topbar_colored .top-socials > a {
+    color: #fff;
+}
+.topbar_colored .top-socials span.soc_name:after, 
+.topbar_colored .top-socials span.soc_name:before, 
+.topbar_colored .top-socials > a > span.soc_name {
+    background: @topbar-colored-sub-bg;
+    color: #fff;
+    text-shadow: none;
+}
+.topbar_colored .top-socials > a > span.soc_icon_bg {
+    background: rgba(0,0,0,.15);
+}
+
+/*-------------------------------------------------------------
+                   Light Header ( Language Select )
+-------------------------------------------------------------*/
+
+.light_header .languages-select .languages-panel-con {
+    background: @main-color;
+}
+.light_header .languages-select li a, .light_header .languages-select .languages-panel-con .lang_checked {
+    color: #fff;
+}
+.topbar_colored .languages-select .languages-panel-con {
+    background: @topbar-colored-sub-bg;
+}
+
+/*-------------------------------------------------------------
+                   Top Bar ( languages select )
+-------------------------------------------------------------*/
+
+.languages-select {
+    margin-right: 40px;
+	position: relative;
+	z-index: 1;
+	
+	> span {
+		cursor: pointer;
+		text-transform: uppercase;
+	}
+	> span i{
+		display: inline-block;
+		font-size: @topbar-font-size;
+		margin: 1px 8px 0 0;
+		vertical-align: top;
+	}
+	.languages-panel {
+		left: 0;
+		margin: 7px 0 0;
+		min-width: 135px;
+		opacity: 0;
+		padding-top: 5px;
+		pointer-events: none;
+		position: absolute;
+		display: block;
+	}
+	.lang_checked {
+		color: @main-color;
+		float: right;
+		margin-top: 3px;
+	}
+	.languages-panel-con {
+		margin: 0px 0px 0px 0px;
+		position: relative;
+	}
+	&:hover .languages-panel {
+		opacity: 1;
+		pointer-events: auto;
+	}
+	li{
+		a {
+			color: @main-black-color;
+			display: block;
+			font-size: @topbar-font-size;
+			font-style: italic;
+			padding: 5px 12px 7px;
+		}
+		&.active a, a:hover {
+			background: rgba(0, 0, 0, 0.1);
+		}
+		
+	}
+}

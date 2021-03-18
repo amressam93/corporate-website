@@ -1,0 +1,69 @@
+<!-- Page Title -->
+<section class="content_section page_title">
+    <div class="content clearfix">
+        <h1 class="" style="font-weight: bold;font-family: 'Noto Kufi Arabic', sans-serif" >فريق العمل </h1>
+        <div class="breadcrumbs">
+            <a href="<?php echo WEBINTY_AR_PATH;  ?>" style="font-weight: bold;font-family: 'Noto Kufi Arabic', sans-serif">الرئيسيه</a>
+            <span class="crumbs-spacer"><i class="ico-angle-left"></i></span>
+            <span style="font-weight: bold;font-family: 'Noto Kufi Arabic', sans-serif" >فريق العمل</span>
+        </div>
+    </div>
+</section>
+<!-- End Page Title -->
+
+
+
+
+
+
+<!-- Our Team -->
+<section class="content_section">
+    <div class="content row_spacer no_padding">
+        <div class="main_title centered upper">
+            <h2 class="webinty_arabic_font"><span class="line"><i class="ico-user5"></i></span>فريق العمل</h2>
+        </div>
+        <div class="rows_container clearfix">
+            <?php foreach($members as $member) {  ?>
+            <div class="col-md-3">
+                <div class="team_block flipp_effect">
+                    <div class="f1_card">
+                        <div class="front face">
+								<span class="team_img">
+									<img alt="Person Name" src="<?php echo WEBINTY_BACKEND_UPLOADS_PATH ; ?>teamwork/<?php echo $member['member_image']; ?>" style="max-width: 170px;max-height: 170px;object-fit: cover;object-position: center">
+								</span>
+                            <span class="person_name" style=" text-transform: capitalize;"><?php echo $member['member_name'] ?></span>
+                            <span class="person_jop"><?php echo $member['member_jop_title'] ?></span>
+                        </div>
+
+                        <div class="back face">
+                            <span class="person_name" style=" text-transform: capitalize;"><?php echo $member['member_name'] ?></span>
+                            <span class="person_jop"><?php echo $member['member_jop_title'] ?></span>
+                            <span class="person_desc" style="text-transform: capitalize;font-weight: bold"><?php echo $member['member_description'] ?></span>
+                            <div class="social_media clearfix">
+                                <a href="<?php if ($member['member_twitter']==null) {echo'https://twitter.com/';} else {echo $member['member_twitter'];} ?>" target="_blank" class="twitter">
+                                    <i class="ico-twitter4"></i>
+                                </a>
+                                <a href="<?php if ($member['member_facebook']==null) {echo'https://facebook.com/';} else {echo $member['member_facebook'];} ?>" target="_blank" class="facebook">
+                                    <i class="ico-facebook4"></i>
+                                </a>
+                                <a href="<?php if ($member['member_googleplus']==null) {echo'https://plus.google.com/explore';} else {echo $member['member_googleplus'];} ?>" target="_blank" class="googleplus">
+                                    <i class="ico-google-plus"></i>
+                                </a>
+                                <a href="<?php if ($member['member_linkedin']==null) {echo'https://www.linkedin.com/';} else {echo $member['member_linkedin'];} ?>" target="_blank" class="linkedin">
+                                    <i class="ico-linkedin3"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div><!-- Col -->
+
+            <?php } ?>
+
+        </div>
+    </div>
+</section>
+<!-- End Our Team -->

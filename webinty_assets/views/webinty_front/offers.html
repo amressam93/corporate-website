@@ -1,0 +1,40 @@
+<!-- Page Title -->
+<section class="content_section page_title">
+    <div class="content clearfix">
+        <h1 class="" style="font-weight: bold;font-family: 'Noto Kufi Arabic', sans-serif" >العروض والباقات</h1>
+        <div class="breadcrumbs">
+            <a href="<?php echo WEBINTY_AR_PATH;  ?>" style="font-weight: bold;font-family: 'Noto Kufi Arabic', sans-serif">الرئيسيه</a>
+            <span class="crumbs-spacer"><i class="ico-angle-left"></i></span>
+            <span style="font-weight: bold;font-family: 'Noto Kufi Arabic', sans-serif" >العروض</span>
+        </div>
+    </div>
+</section>
+<!-- End Page Title -->
+
+
+
+
+<section class="content_section">
+    <div class="content row_spacer">
+        <div class="rows_container clearfix" style="display: flex;flex-wrap: wrap;" >
+        <?php foreach($offerCategories as $category) { ?>
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" style="margin-bottom: 15px;display: flex;flex-direction: column;">
+            <div class="listing listing-radius listing-success" style="height: 100%;">
+                <div class="shape">
+                    <div class="shape-text">50%</div>
+                </div>
+                <div class="listing-content">
+                    <h3 class="lead webinty_arabic_font"><a class="black_font" href="<?php echo WEBINTY_AR_PATH;  ?>offers/offer.php?categoryId=<?php echo $category['offer_category_id']; ?>"><?php echo $category['offer_category_name']; ?></a></h3>
+                    <p class="webinty_arabic_font_without_bold"><?php echo $category['offer_category_description']; ?></p>
+                </div>
+            </div>
+        </div>
+        <?php } ?>
+        </div>
+    </div>
+</section>
+
+
+
+
+

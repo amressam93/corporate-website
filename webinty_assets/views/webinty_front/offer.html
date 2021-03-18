@@ -1,0 +1,98 @@
+<!-- Page Title -->
+<section class="content_section page_title">
+    <div class="content clearfix">
+        <h1 class="" style="font-weight: bold;font-family: 'Noto Kufi Arabic', sans-serif" ><?php echo $offerCategoryById['offer_category_name']; ?> </h1>
+        <div class="breadcrumbs">
+            <a href="<?php echo WEBINTY_AR_PATH;  ?>" style="font-weight: bold;font-family: 'Noto Kufi Arabic', sans-serif">الرئيسيه</a>
+            <span class="crumbs-spacer"><i class="ico-angle-left"></i></span>
+            <a href="" style="font-weight: bold;font-family: 'Noto Kufi Arabic', sans-serif">العروض</a>
+            <span class="crumbs-spacer"><i class="ico-angle-left"></i></span>
+            <span style="font-weight: bold;font-family: 'Noto Kufi Arabic', sans-serif" ><?php echo $offerCategoryById['offer_category_name']; ?></span>
+        </div>
+    </div>
+</section>
+<!-- End Page Title -->
+
+
+<!-- Pricing Tables 1 -->
+<section class="content_section">
+    <div class="content row_spacer">
+
+        <div class="main_title has_bg blue_bg centered upper">
+            <h2 style="font-weight: bold;font-family: 'Noto Kufi Arabic', sans-serif"><span class="line"></span><?php echo $offerCategoryById['offer_category_name']; ?></h2>
+        </div>
+
+        <h1 style="font-weight: bold;font-family: 'Noto Kufi Arabic', sans-serif" class="centered"><?php echo $offerCategoryById['offer_category_description']; ?></h1>
+
+
+        <svg id="polygon_svg" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="0px" height="0px" viewBox="0 0 60 69.474" enable-background="new 0 0 60 69.474" xml:space="preserve">
+				<defs>
+					<g id="hex">
+						<path d="M60.083,47.104c0,2.75-1.948,6.125-4.33,7.5L34.33,66.974c-2.382,1.375-6.279,1.375-8.66,0L4.247,54.604
+									      c-2.382-1.375-4.33-4.75-4.33-7.5V22.369c0-2.75,1.948-6.125,4.33-7.5L25.67,2.5c2.381-1.375,6.278-1.375,8.659,0l21.422,12.369
+									      c2.382,1.375,4.33,4.75,4.33,7.5L60.083,47.104z"></path>
+					</g>
+				</defs>
+			</svg>
+        <div class="amressam rows_container clearfix">
+            <?php foreach($offers as $offer) { ?>
+
+
+            <div class="pricelist_div col-md-4">
+
+                <div class="essam plan_col plan_column1">
+
+
+
+                    <h6>
+							<span class="plan_price_block">
+								<span class="plan_price_in">
+									<span class="price" style="padding-top: 25px"><?php echo $offer['price']; ?></span>
+									<span class="plan_per" style="font-weight: bold;font-family: 'Noto Kufi Arabic', sans-serif">جنيه مصري</span>
+								</span>
+							</span>
+                        <span class="polygon_con">
+								<svg viewBox="0 0 70 70" xml:space="preserve" enable-background="" height="100px" width="100px" y="0px" x="0px" xmlns="http://www.w3.org/2000/svg">
+                              <use y="0px" x="5px" xlink:href="#hex" class="polygon_fill" stroke-width="1"/>
+                            </svg>
+							</span>
+                        <span class="plan_price_name" style="font-weight: bold;font-family: 'Noto Kufi Arabic', sans-serif"><?php echo $offer['offer_title']; ?></span>
+                    </h6>
+
+                    <ul>
+                        <?php if (strlen($offer['factor_1'])>0) { ?><li><span> <?php echo $offer['factor_1']; } ?> </span></li>
+                        <?php if (strlen($offer['factor_2'])>0) { ?><li><span> <?php echo $offer['factor_2']; } ?> </span></li>
+                        <?php if (strlen($offer['factor_3'])>0) { ?><li><span> <?php echo $offer['factor_3']; } ?> </span></li>
+                        <?php if (strlen($offer['factor_4'])>0) { ?><li><span> <?php echo $offer['factor_4']; } ?> </span></li>
+                        <?php if (strlen($offer['factor_5'])>0) { ?><li><span> <?php echo $offer['factor_5']; } ?> </span></li>
+                        <?php if (strlen($offer['factor_6'])>0) { ?><li><span> <?php echo $offer['factor_6']; } ?> </span></li>
+                        <?php if (strlen($offer['factor_7'])>0) { ?><li><span> <?php echo $offer['factor_7']; } ?> </span></li>
+                        <?php if (strlen($offer['factor_8'])>0) { ?><li><span> <?php echo $offer['factor_8']; } ?> </span></li>
+                        <?php if (strlen($offer['factor_9'])>0) { ?><li><span> <?php echo $offer['factor_9']; } ?> </span></li>
+                        <?php if (strlen($offer['factor_10'])>0) { ?><li><span> <?php echo $offer['factor_10']; } ?> </span></li>
+                        <?php if (strlen($offer['factor_11'])>0) { ?><li><span> <?php echo $offer['factor_11']; } ?> </span></li>
+                        <?php if (strlen($offer['factor_12'])>0) { ?><li><span> <?php echo $offer['factor_12']; } ?> </span></li>
+                        <?php if (strlen($offer['factor_13'])>0) { ?><li><span> <?php echo $offer['factor_13']; } ?> </span></li>
+                        <?php if (strlen($offer['factor_14'])>0) { ?><li><span> <?php echo $offer['factor_14']; } ?> </span></li>
+                        <?php if (strlen($offer['factor_15'])>0) { ?><li><span> <?php echo $offer['factor_15']; } ?> </span></li>
+
+                    </ul>
+
+
+                    <div class="price_list_new">
+                     <a class="main_button color1 medium_btn" href="#"><i class="ico-cart"></i>أطلب هذة العرض</a>
+                    </div>
+
+
+                </div>
+            </div><!-- Grid col-md-4-->
+
+
+            <?php } ?>
+        </div>
+    </div>
+</section>
+<!-- End Pricing Tables 1 -->
+
+
+

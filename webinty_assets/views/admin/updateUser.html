@@ -1,0 +1,82 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Update User</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="<?php echo WEBINTY_PATH; ?>admin_dashboard/">Home</a>
+            </li>
+            <li>
+                <a href="<?php echo WEBINTY_PATH; ?>admin_dashboard/users.php">All Users</a>
+            </li>
+            <li class="active">
+                <strong>Update User</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+
+        <div class="col-lg-8">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Update User <small> Simple Update User </small></h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+
+                        <div id="updateUserResult"></div>
+
+                        <div class="col-sm-12"><h3 class="m-t-none m-b">Update User</h3>
+
+                            <form role="form" id="updateUserForm" enctype="multipart/form-data">
+
+                                <div class="form-group"><label>Name </label> <input type="text" placeholder="Enter Name" class="form-control" id="name" name="name" value="<?php echo $user['name']; ?>"></div>
+                                <div class="form-group"><label>user Name</label> <input type="text" placeholder="Enter User Name" class="form-control" id="username" name="username" value="<?php echo $user['username']; ?>"></div>
+                                <div class="form-group"><label>password</label> <input type="password" placeholder="Enter password" class="form-control" id="password" name="password"></div>
+                                <div class="form-group"><label>Email Address</label> <input type="email" placeholder="Enter Your Email Address" class="form-control" id="email" name="email" disabled value="<?php echo $user['email']; ?>"></div><br/>
+                                <div class="form-group"><label>About User</label> <textarea id="edit" name="aboutuser" ><?php echo $user['about_user']; ?></textarea></div><br/>
+                                <div class="form-group"><label>Image</label><br>
+                                    <img class="img-thumbnail" width="100px" height="100px" src="<?php echo WEBINTY_BACKEND_UPLOADS_PATH ; ?>users/<?php echo $user['image']; ?>"><br><br>
+                                    <input type="file" class="form-control" id="userImage" name="userImage">
+                                </div>
+                                <div class="form-group"><label>FaceBook</label> <input type="text" placeholder="Enter Your FaceBook link" class="form-control" id="facebook" name="facebook" value="<?php echo $user['facebook']; ?>"></div>
+                                <div class="form-group"><label>Twitter</label> <input type="text" placeholder="Enter Your Twitter link " class="form-control" id="twitter" name="twitter" value="<?php echo $user['twitter']; ?>"></div>
+                                <div class="form-group"><label>LinkedIn</label> <input type="text" placeholder="Enter Your LinkedIn link" class="form-control" id="linkedin" name="linkedin" value="<?php echo $user['linkedin']; ?>"></div>
+                                <div class="form-group"><label>GooglePlus</label> <input type="text" placeholder="Enter Your GooglePlus link" class="form-control" id="googleplus" name="googleplus" value="<?php echo $user['googleplus']; ?>"></div>
+                                <div class="form-group"><label>User Group</label>
+                                    <select class="form-control" name="user_group" id="user_group">
+
+                                       <?php foreach($userGroups as $group){
+
+                                       $id   = $group['group_id'];
+                                       $name = $group['group_name'];
+
+                                        ?>
+
+                                       <option value="<?php echo $id; ?>" <?php echo ($user['user_group']== $id)? "selected": "" ; ?> ><?php echo $name; ?></option>
+
+                                       <?php } ?>
+
+                                    </select>
+                                </div>
+
+                                <input type="hidden" style="display: none" name="userID" value="<?php echo $user['user_id']; ?>">
+
+                                <div>
+                                    <button class="btn btn-sm btn-primary" type="submit" id="updateUser_submit" name="updateUser_submit" style="font-weight: bold"><strong>Update User</strong></button>
+                                    <span  class="btn btn-sm btn-primary" id="updateUser_spinner" style="font-weight: bold;display: none">Loading <i class="fa fa-refresh fa-spin" style="font-size:18px;color: white"></i></span>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>

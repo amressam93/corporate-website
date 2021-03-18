@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title><?php echo $pageTitle; ?></title>
+
+    <link href="<?php echo WEBINTY_BACKEND_ASSETS_PATH ; ?>css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo WEBINTY_BACKEND_ASSETS_PATH ; ?>font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <link href="<?php echo WEBINTY_BACKEND_ASSETS_PATH ; ?>css/animate.css" rel="stylesheet">
+    <link href="<?php echo WEBINTY_BACKEND_ASSETS_PATH ; ?>css/style.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body class="gray-bg">
+
+<div class="middle-box text-center loginscreen  animated fadeInDown">
+    <div>
+        <div>
+
+            <h1 class="logo-name" style="font-size: 70px;letter-spacing:1px;">Webinty</h1>
+
+        </div>
+        <h3>Welcome to Webinty</h3>
+        <p>Perfectly designed and precisely prepared admin theme with over 50 pages with extra new web app views.
+            <!--Continually expanded and constantly improved Inspinia Admin Them (IN+)-->
+        </p>
+        <p>Login in. To see it in action.</p>
+
+        <div id="login_result" style="display: none"></div>
+
+        <form class="m-t" role="form" action="" method="post" id="login_form">
+            <div class="form-group">
+                <input type="email" class="form-control" placeholder="Email Address" name="email" id="email">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" placeholder="Password" name="password" id="password">
+            </div>
+            <button type="submit" class="btn btn-primary block full-width m-b" name="login" id="login" style="font-weight: bold">Login</button>
+            <span  class="btn btn-primary block full-width m-b" id="login_spinner" style="font-weight: bold;display: none">Loading <i class="fa fa-refresh fa-spin" style="font-size:18px;color: white"></i></span>
+
+        </form>
+        <p class="m-t"> <small>Webinty Web Soultion Company base on  &copy; 2017</small> </p>
+    </div>
+</div>
+
+<!-- Mainly scripts -->
+<script src="<?php echo WEBINTY_BACKEND_ASSETS_PATH ; ?>js/jquery-2.1.1.js"></script>
+<script src="<?php echo WEBINTY_BACKEND_ASSETS_PATH ; ?>js/bootstrap.min.js"></script>
+<script src="<?php echo WEBINTY_BACKEND_ASSETS_PATH ; ?>js/webinty_customize.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/additional-methods.min.js"></script>
+
+</body>
+
+</html>

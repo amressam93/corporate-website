@@ -1,0 +1,101 @@
+@import "../variables.less";
+
+/* ----------------------------------------------------------------
+	Client Say
+-----------------------------------------------------------------*/
+
+.normal_text_slider {
+    position: relative;
+    .c_say {
+        text-align: center;
+    }
+    .client_img {
+        border: 1px solid #dadbdb;
+        display: inline-block;
+        overflow: hidden;
+        padding: 6px;
+        position: relative;
+        text-align: center;
+        img {
+            display: block;
+            position: relative;
+        }
+        & > span {
+            display: block;
+            height: 100%;
+            position: relative;
+            width: 100%;
+        }
+    }
+    .client_details {
+        color: @heading-color;
+        display: block;
+        font-size: 16px;
+        margin: 30px 0 15px;
+        text-transform: uppercase;
+    }
+    .url {
+        color: @main-color;
+    }
+    .desc {
+        margin-bottom: 30px;
+        color: #8f8e8e;
+        font-size: 16px;
+        font-style: italic;
+        line-height: 33px;
+        display: block;
+    }
+}
+.white_section {
+    .normal_text_slider {
+        .client_img {
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            padding: 5px;
+        }
+        .client_details {
+            color: #fff;
+        }
+        .desc {
+            color: #fff;
+        }
+    }
+    .btn_a {
+        box-shadow: 0px 3px 1px rgba(0,0,0,.2);
+        margin-bottom: 3px;
+        border: none;
+    }
+}
+.normal_text_slider.client_say_slider {
+    .desc {
+        margin-bottom: 0;
+    }
+}
+.what_say_block {
+    position: relative;
+    margin-bottom: 40px;
+    .say_img {
+        border: 1px solid #dadbdb;
+        display: inline-block;
+        padding: 4px;
+        position: absolute;
+    }
+    .say_datils {
+        min-height: 89px;
+        padding-left: 100px;
+    }
+}
+.say_datils {
+    & > h5 {
+        color: @heading-color;
+        font-size: @font-size-main;
+        margin-bottom: 10px;
+        text-transform: capitalize;
+        & > span {
+            color: @main-color;
+            margin-left: 7px;
+        }
+    }
+    .text {
+        line-height: 25px;
+    }
+}

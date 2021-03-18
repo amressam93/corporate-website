@@ -1,0 +1,165 @@
+@import "../variables.less";
+
+/* ----------------------------------------------------------------
+	Thembs Gallery
+-----------------------------------------------------------------*/
+
+.thumbs_gall_slider_larg:not(.internal_porto) {
+    .item {
+        & > a:after {
+            background: @main-color;
+            color: #fff;
+            content: "\e112";
+            display: block;
+            font-family: idealtheme;
+            font-size: 24px;
+            height: 70px;
+            line-height: 70px;
+            position: absolute;
+            text-align: center;
+            width: 70px;
+            opacity: 0;
+            pointer-events: auto;
+            -webkit-transform: translateY(-50%) translateX(-50%) scale(2) rotate(45deg);
+            -moz-transform: translateY(-50%) translateX(-50%) scale(2) rotate(45deg);
+            -ms-transform: translateY(-50%) translateX(-50%) scale(2) rotate(45deg);
+            -o-transform: translateY(-50%) translateX(-50%) scale(2) rotate(45deg);
+            transform: translateY(-50%) translateX(-50%) scale(2) rotate(45deg);
+        }
+    }
+}
+.thumbs_gall_slider_con {
+    border: 1px solid #E5E5E5;
+    position: relative;
+    background: #fff;
+    .owl-controls {
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        opacity: 0;
+    }
+}
+.gall_thumbs {
+    padding: 15px 14px;
+    .owl-item {
+        border: 1px solid #fff;
+    }
+    .current_thumb {
+        border: 1px solid @main-color;
+        overflow: hidden;
+    }
+    .item {
+        cursor: pointer;
+        h1 {
+            font-size: 18px;
+        }
+    }
+}
+.thumbs_gall_slider_con:hover {
+    .owl-controls {
+        opacity: 1;
+    }
+}
+.thumbs_gall_slider_larg .enar_owl_n, .thumbs_gall_slider_larg .enar_owl_p {
+    background: @red-color;
+    color: #fff;
+    display: block;
+    font-size: 16px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    width: 25px;
+}
+.content_thumbs_gall {
+    margin-bottom: 25px;
+    .thumbs_gall_slider_larg {
+        padding: 7px;
+        border-bottom: none;
+        .owl-prev {
+            left: 0;
+            margin-top: -13px;
+        }
+        .owl-next {
+            right: 14px;
+            margin-top: -13px;
+        }
+    }
+    .gall_thumbs {
+        padding: 0 0px 7px 7px;
+        .owl-item {
+            border: none;
+            & > .item {
+                margin-right: 7px;
+                overflow: hidden;
+                position: relative;
+            }
+        }
+    }
+}
+.content_thumbs_gall .gall_thumbs .owl-item.current_thumb &>.item,.content_thumbs_gall .gall_thumbs .owl-item:hover &>.item {
+    opacity: 0.4;
+}
+.gall_arrow2 .thumbs_gall_slider_larg .enar_owl_n, .gall_arrow2 .thumbs_gall_slider_larg .enar_owl_p {
+    background: #fff;
+    color :@main-color;
+    font-size: 24px;
+    height: 40px;
+    line-height: 40px;
+    width: 40px;
+}
+.thumbs_gall_slider_con.content_thumbs_gall {
+    .owl-controls {
+        opacity: 1;
+    }
+}
+.content_thumbs_gall.gall_arrow2 {
+    .thumbs_gall_slider_larg {
+        .owl-prev {
+            left: 20px;
+            margin-top: -20px;
+        }
+        .owl-next {
+            right: 40px;
+            margin-top: -20px;
+        }
+    }
+}
+.col-md-12 &>.content_thumbs_gall .thumbs_gall_slider_larg .enar_owl_n, .col-md-12 &>.content_thumbs_gall .thumbs_gall_slider_larg .enar_owl_p {
+    font-size: 20px;
+    height: 35px;
+    line-height: 35px;
+    width: 35px;
+}
+.col-md-12 {
+    & > .content_thumbs_gall {
+        margin-bottom: 30px;
+    }
+}
+.thumbs_gall_slider_larg {
+    border-bottom: 1px solid #E5E5E5;
+    .item {
+        position: relative;
+        overflow: hidden;
+        & > a {
+            display: block;
+            position: relative;
+            pointer-events: none;
+        }
+    }
+    .item:hover {
+        a:after {
+            opacity: 0.7;
+            -webkit-transform: translateY(-50%) translateX(-50%) scale(1) rotate(0deg);
+            -moz-transform: translateY(-50%) translateX(-50%) scale(1) rotate(0deg);
+            -ms-transform: translateY(-50%) translateX(-50%) scale(1) rotate(0deg);
+            -o-transform: translateY(-50%) translateX(-50%) scale(1) rotate(0deg);
+            transform: translateY(-50%) translateX(-50%) scale(1) rotate(0deg);
+        }
+    }
+    .owl-prev {
+        left: -1px;
+    }
+    .owl-next {
+        right: -1px;
+    }
+}

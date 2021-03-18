@@ -1,0 +1,60 @@
+@import "../variables.less";
+
+/* ----------------------------------------------------------------
+	Google Map
+-----------------------------------------------------------------*/
+
+.bordered_content:not(.with_text) {
+    .google_map {
+        height: 350px;
+    }
+}
+.google_map {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    img {
+        max-width: none;
+    }
+}
+.content {
+    .bordered_content {
+        margin-bottom: 25px;
+    }
+    .bordered_content.bordered {
+        border: 1px solid #e7e7e7;
+        padding: 8px;
+    }
+}
+.bordered_content.bordered {
+    border-top: 1px solid #e7e7e7;
+    border-bottom: 1px solid #e7e7e7;
+    padding: 8px 0px;
+    margin-bottom: 0;
+}
+.bordered_content.with_text {
+    margin: 0 25px 25px 0;
+}
+
+/*-------- World Maps --------*/
+
+.mapTooltip {
+	position : fixed;
+	background : #fff;
+	moz-opacity:0.70;
+	opacity: 0.70;
+	filter:alpha(opacity=70);
+	padding : 10px 15px;
+	z-index: 1000;
+	max-width: 200px;
+	display:none;
+	color:#343434;
+}
+.mapTooltip > span {
+    font-size: 16px;
+    text-transform: uppercase;
+}
+.mapcontainer .areaLegend, .mapcontainer .plotLegend{
+    float: left;
+    width: 50%;
+}

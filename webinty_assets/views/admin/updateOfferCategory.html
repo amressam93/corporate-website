@@ -1,0 +1,59 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2><?php echo $pageTitle; ?></h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="<?php echo WEBINTY_PATH; ?>admin_dashboard/">Home</a>
+            </li>
+            <li>
+                <a href="<?php echo WEBINTY_PATH; ?>admin_dashboard/offerCategories.php">All Offer Categories</a>
+            </li>
+            <li class="active">
+                <strong><?php echo $pageTitle; ?></strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="container">
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+
+            <div class="col-lg-10">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>Update Offer Category<small> <?php echo $pageTitle; ?> </small></h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="row">
+
+                            <div id="updateOfferCategoryResult"></div>
+
+                            <div class="col-sm-12"><h3 class="m-t-none m-b"><?php echo $pageTitle; ?></h3>
+
+                                <form role="form" id="updateOfferCategory">
+
+                                    <div class="form-group"><label>Offer Category Name</label> <input type="text" placeholder="Enter Offer Category Name" class="form-control" id="offerCategoryname" name="offerCategoryname" value="<?php echo $offerCategory['offer_category_name']; ?>"></div>
+                                    <div class="form-group"><label>Offer Category Description</label> <textarea id="offerCategoryDescription" class="form-control" rows="8"  name="offerCategoryDescription" ><?php echo $offerCategory['offer_category_description']; ?></textarea></div>
+                                    <div class="form-group"><label>Offer Category SEO Title</label> <input type="text" placeholder="Enter Offer Category SEO Title" class="form-control" id="offerCategorySeoTitle" name="offerCategorySeoTitle" value="<?php echo $offerCategory['offer_category_seo_title']; ?>"></div>
+                                    <div class="form-group"><label>Offer Category SEO Description</label> <textarea id="offerCategorySeoDescription" name="offerCategorySeoDescription" class="form-control" rows="8" ><?php echo $offerCategory['offer_category_seo_description']; ?></textarea></div><br/>
+                                    <div class="form-group"><label>Offer Category SEO Keywords</label> <input type="text" placeholder="Enter Offer Category SEO Keywords" class="form-control" id="offerCategorySeoKeywords" name="offerCategorySeoKeywords" value="<?php echo $offerCategory['offer_category_seo_keywords']; ?>"></div>
+                                    <input type="hidden" name="offerCategoryId" value="<?php echo $offerCategory['offer_category_id']; ?>">
+
+                                    <div>
+                                        <button class="btn btn-sm btn-primary" type="submit" id="updateOfferCategory_submit" name="updateOfferCategory_submit" style="font-weight: bold"><strong>Add Offer Category</strong></button>
+                                        <span  class="btn btn-sm btn-primary" id="updateOfferCategory_spinner" style="font-weight: bold;display: none">Loading <i class="fa fa-refresh fa-spin" style="font-size:18px;color: white"></i></span>
+                                    </div>
+                                </form>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>

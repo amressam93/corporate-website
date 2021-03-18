@@ -1,0 +1,88 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2><?php echo $pageTitle; ?></h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="<?php echo WEBINTY_PATH; ?>admin_dashboard/">Home</a>
+            </li>
+            <li>
+                <a href="<?php echo WEBINTY_PATH; ?>admin_dashboard/offers.php">All Offers</a>
+            </li>
+            <li class="active">
+                <strong><?php echo $pageTitle; ?></strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="container">
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+
+            <div class="col-lg-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5><?php echo $pageTitle; ?><small> Simple Update Offer </small></h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="row">
+
+                            <div id="updateOfferResult"></div>
+
+                            <div class="col-sm-12"><h3 class="m-t-none m-b"><?php echo $pageTitle; ?></h3>
+
+                                <form role="form" id="updateOfferForm" enctype="multipart/form-data">
+
+                                    <div class="form-group"><label>Offer Name</label> <input type="text" placeholder="Enter offer Title" class="form-control" id="offerTitle" name="offerTitle" value="<?php echo $offer['offer_title']; ?>"></div>
+                                    <div class="form-group"><label>Offer Price</label> <input type="text" placeholder="Enter offer price" class="form-control" id="offerPrice" name="offerPrice" value="<?php echo $offer['price']; ?>"></div>
+                                    <div class="form-group"><label>Feature_1</label> <input type="text" placeholder="Enter feature" class="form-control" id="feature_1" name="feature_1" value="<?php echo $offer['factor_1']; ?>"></div>
+                                    <div class="form-group"><label>Feature_2</label> <input type="text" placeholder="Enter feature" class="form-control" id="feature_2" name="feature_2" value="<?php echo $offer['factor_2']; ?>"></div>
+                                    <div class="form-group"><label>Feature_3</label> <input type="text" placeholder="Enter feature" class="form-control" id="feature_3" name="feature_3" value="<?php echo $offer['factor_3']; ?>"></div>
+                                    <div class="form-group"><label>Feature_4</label> <input type="text" placeholder="Enter feature" class="form-control" id="feature_4" name="feature_4" value="<?php echo $offer['factor_4']; ?>"></div>
+                                    <div class="form-group"><label>Feature_5</label> <input type="text" placeholder="Enter feature" class="form-control" id="feature_5" name="feature_5" value="<?php echo $offer['factor_5']; ?>"></div>
+                                    <div class="form-group"><label>Feature_6</label> <input type="text" placeholder="Enter feature" class="form-control" id="feature_6" name="feature_6" value="<?php echo $offer['factor_6']; ?>"></div>
+                                    <div class="form-group"><label>Feature_7</label> <input type="text" placeholder="Enter feature" class="form-control" id="feature_7" name="feature_7" value="<?php echo $offer['factor_7']; ?>"></div>
+                                    <div class="form-group"><label>Feature_8</label> <input type="text" placeholder="Enter feature" class="form-control" id="feature_8" name="feature_8" value="<?php echo $offer['factor_8']; ?>"></div>
+                                    <div class="form-group"><label>Feature_9</label> <input type="text" placeholder="Enter feature" class="form-control" id="feature_9" name="feature_9" value="<?php echo $offer['factor_9']; ?>"></div>
+                                    <div class="form-group"><label>Feature_10</label> <input type="text" placeholder="Enter feature" class="form-control" id="feature_10" name="feature_10" value="<?php echo $offer['factor_10']; ?>"></div>
+                                    <div class="form-group"><label>Feature_11</label> <input type="text" placeholder="Enter feature" class="form-control" id="feature_11" name="feature_11" value="<?php echo $offer['factor_11']; ?>"></div>
+                                    <div class="form-group"><label>Feature_12</label> <input type="text" placeholder="Enter feature" class="form-control" id="feature_12" name="feature_12" value="<?php echo $offer['factor_12']; ?>"></div>
+                                    <div class="form-group"><label>Feature_13</label> <input type="text" placeholder="Enter feature" class="form-control" id="feature_13" name="feature_13" value="<?php echo $offer['factor_13']; ?>"></div>
+                                    <div class="form-group"><label>Feature_14</label> <input type="text" placeholder="Enter feature" class="form-control" id="feature_14" name="feature_14" value="<?php echo $offer['factor_14']; ?>"></div>
+                                    <div class="form-group"><label>Feature_15</label> <input type="text" placeholder="Enter feature" class="form-control" id="feature_15" name="feature_15" value="<?php echo $offer['factor_15']; ?>"></div>
+                                    <input type="hidden" name="offerID" value="<?php echo $offer['offer_id']; ?>">
+
+                                    <div class="form-group"><label>Offer Category</label>
+                                        <select class="form-control" name="offerCategory" id="offerCategory">
+
+                                            <?php foreach($categories as $category){
+
+                                               $id   = $category['offer_category_id'];
+                                               $name = $category['offer_category_name'];
+
+                                            ?>
+
+                                            <option value="<?php echo $id; ?>" <?php echo ($offer['offer_category']== $id)? "selected": "" ; ?> ><?php echo $name; ?></option>
+
+                                            <?php } ?>
+
+                                        </select>
+                                    </div>
+
+                                    <div>
+                                        <button class="btn btn-sm btn-primary" type="submit" id="updateOffer_submit" name="updateOffer_submit" style="font-weight: bold"><strong>Update Offer</strong></button>
+                                        <span  class="btn btn-sm btn-primary" id="updateOffer_spinner" style="font-weight: bold;display: none">Loading <i class="fa fa-refresh fa-spin" style="font-size:18px;color: white"></i></span>
+                                    </div>
+                                </form>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>

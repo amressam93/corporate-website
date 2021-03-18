@@ -1,0 +1,120 @@
+.webinty_arabic_font {
+    font-weight: bold;
+    font-family: 'Noto Kufi Arabic', sans-serif !important;
+}
+
+.webinty_arabic_font_without_bold{
+    font-family: 'Noto Kufi Arabic', sans-serif !important;
+}
+
+
+.webinty_text_center{
+    text-align: center;
+}
+
+.webinty_bold{
+    font-weight: bold;
+}
+
+
+
+.black_font{
+    color: black;
+}
+
+.standard_color_webinty {
+
+    color: #1ccdca;
+}
+
+
+.whatsapp_float{
+    position:fixed;
+    width:60px;
+    height:60px;
+    bottom:120px;
+    right:15px;
+    background-color:#25d366;
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    font-size:30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index:100;
+}
+
+.whatsapp_my-float{
+    margin-top:16px;
+}
+
+
+
+.facebook_messenger_float
+{
+    position:fixed;
+    width:60px;
+    height:60px;
+    bottom:200px;
+    right:15px;
+    background-color:#4c6ef5;
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    font-size:30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index:100;
+}
+
+
+.facebook_messenger_my-float{
+    margin-top:16px;
+}
+
+
+.phone_float{
+
+    position:fixed;
+    width:60px;
+    height:60px;
+    bottom:280px;
+    right:15px;
+    background-color:forestgreen;
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    font-size:30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index:100;
+}
+
+
+.phone_my-float{
+    margin-top:16px;
+}
+
+
+
+.map-responsive{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+.map-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+
+.tel_color_webinty{
+    color: red;
+}
+
+
+.text_captalize{
+    text-transform: capitalize;
+}
+
+

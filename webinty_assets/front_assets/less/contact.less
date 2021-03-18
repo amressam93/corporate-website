@@ -1,0 +1,163 @@
+@import "variables.less";
+
+/* ----------------------------------------------------------------
+	Contact Us
+-----------------------------------------------------------------*/
+
+.contact_details_row {
+    margin-bottom: 40px;
+    min-height: 75px;
+    position: relative;
+    .icon {
+        top: 5px;
+        color: #fff;
+        display: block;
+        font-size: 24px;
+        height: 70px;
+        position: absolute;
+        width: 70px;
+        background: #576162;
+        text-align: center;
+        line-height: 70px;
+    }
+    .c_con {
+        position: relative;
+        padding-left: 90px;
+    }
+}
+.contact_details_row:last-child {
+    margin-bottom: 0;
+}
+.c_con {
+    .c_title {
+        display: block;
+        font-size: 16px;
+        color: @main-color;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+    }
+}
+.c_detail {
+    line-height: 28px;
+    display: block;
+    .c_name {
+        display: inline-block;
+        color: @heading-color;
+        margin-right: 10px;
+        text-transform: capitalize;
+    }
+    .c_desc {
+        color: #9ea3a3;
+    }
+}
+.c_detail.inline_block {
+    display: inline-block;
+    margin-right: 30px;
+}
+.hm_contact_form {
+    position: relative;
+}
+.label_space {
+    display: block;
+    margin-bottom: 10px;
+}
+.form_row {
+    margin-top: 27px;
+    label:not(.orderby_label) {
+        float: left;
+        display: block;
+        width: 20%;
+        color: #999;
+        line-height: 39px;
+    }
+    .orderby_label {
+        float: left;
+        width: 80%;
+    }
+    & > span {
+        display: inline-block;
+    }
+    label.error {
+        color: @red-color;
+        margin-bottom: 0;
+        width: 80%;
+        float: right;
+        font-size: 13px;
+    }
+    .hm_input_text {
+        color: @heading-color;
+        width: 80%;
+        font-weight: 600;
+    }
+    .hm_textarea {
+        color: @heading-color;
+        width: 80%;
+        min-height: 200px;
+    }
+    #form-messages {
+        margin-left: 20%;
+    }
+}
+.form_row input[type="radio"]:first-of-type, .form_row input[type="checkbox"]:first-of-type {
+    margin-left: 0;
+}
+.form_row input[type="radio"], .form_row input[type="checkbox"] {
+    display: inline-block;
+    margin: 3px 5px 4px 15px;
+}
+.full_contact_form {
+    .form_row {
+        label {
+            float: none;
+            width: 100%;
+        }
+    }
+    #form-messages {
+        margin-left: 0;
+    }
+}
+.bg_gray {
+    .form_row {
+        label {
+            color: #888;
+        }
+    }
+}
+.full_contact_form .form_row .hm_input_text, .full_contact_form .form_row .hm_textarea, .full_contact_form .form_row select, .form_row input[type="file"] {
+    width: 100%;
+}
+.full_contact_form .form_row button, .full_contact_form .form_row input[type="submit"] {
+    margin-left: 0;
+    max-width: 100%;
+}
+.hm_requires_star {
+    color: @red-color;
+}
+.my_col_half label.error, .full_contact_form label.error {
+    float: none;
+}
+.form_row:first-child {
+    margin-top: 0;
+}
+#form-messages.send_success {
+    border: 2px solid #44a244;
+    color: #555;
+    padding: 14px 20px 15px;
+}
+.form_row button, .form_row input[type="submit"] {
+    max-width: 80%;
+    margin-left: 20%;
+}
+.full_button {
+    width: 100%;
+}
+.form_loader {
+    background: url("../images/camera-loader.gif") no-repeat center center rgba(255, 255, 255, 0.6);
+    display: none;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+}

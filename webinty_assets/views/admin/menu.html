@@ -1,0 +1,188 @@
+<div id="wrapper">
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav" id="side-menu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element">
+                        <a href="<?php echo WEBINTY_BACKEND_UPLOADS_PATH ; ?>users/<?php echo $_SESSION['user']['image']; ?>">
+                            <img alt="image" class="img-responsive img-rounded " style="width: 77px;max-height: 77px" src="<?php echo WEBINTY_BACKEND_UPLOADS_PATH ; ?>users/<?php echo $_SESSION['user']['image']; ?>" />
+                        </a>
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold"><?php echo $_SESSION['user']['name']; ?></strong>
+                             </span> <span class="text-muted text-xs block"><?php echo $_SESSION['user']['group_name']; ?> <b class="caret"></b></span> </span> </a>
+                        <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                            <li><a href="<?php echo WEBINTY_PATH; ?>admin_dashboard/profile.php?id=<?php echo $_SESSION['user']['user_id']; ?>">Profile</a></li>
+                            <li><a href="#">Contacts</a></li>
+                            <li class="divider"></li>
+                            <li><a href="<?php echo WEBINTY_AR_PATH; ?>logout/">Logout</a></li>
+                        </ul>
+                    </div>
+                    <div class="logo-element">
+                        Webinty
+                    </div>
+                </li>
+
+                <li>
+                    <a href="<?php echo WEBINTY_PATH ; ?>admin_dashboard/"><i class="fa fa-desktop"></i> <span class="nav-label">Dashboard</span> </a>
+                </li>
+
+
+
+                <li class="">
+                    <a href="#"><i class="fa fa-info"></i> <span class="nav-label">General Information</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li class="active"><a href="addPublicInfo.php">Add Information</a></li>
+                        <li ><a href="allPublicInfo.php">All Informations</a></li>
+                    </ul>
+                </li>
+
+
+
+                <li class="">
+                    <a href="#"><i class="fa fa-users"></i> <span class="nav-label">User Groups</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li class="active"><a href="addUserGroup.php">Add User Group</a></li>
+                        <li ><a href="usersGroups.php">All User Groups</a></li>
+                    </ul>
+                </li>
+
+
+                <li class="">
+                    <a href="#"><i class="fa fa-user"></i> <span class="nav-label">Users</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li class="active"><a href="addUser.php">Add User</a></li>
+                        <li ><a href="users.php">All Users</a></li>
+                    </ul>
+                </li>
+
+
+                <li class="">
+                    <a href="#"><i class="fa fa-list-alt"></i> <span class="nav-label">TeamWork Sections</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li class="active"><a href="addTeamWorkSection.php">Add Section</a></li>
+                        <li ><a href="TeamWorkSections.php">All Sections</a></li>
+                    </ul>
+                </li>
+
+
+                <li class="">
+                    <a href="#"><i class="fa fas fa-users"></i> <span class="nav-label">TeamWork</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li class="active"><a href="addTeamWorkMember.php">Add Member</a></li>
+                        <li ><a href="teamWorkMembers.php">All Members</a></li>
+                    </ul>
+                </li>
+
+
+                <li class="">
+                    <a href="#"><i class="fa fa-ticket"></i> <span class="nav-label">Client Tickets</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li class="active"><a href="addClientTicket.php">Add Ticket</a></li>
+                        <li ><a href="clientTickets.php">All Tickets</a></li>
+                    </ul>
+                </li>
+
+
+
+
+                <li class="">
+                    <a href="#"><i class="fa fa-list"></i> <span class="nav-label">Subjects Categories</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li class="active"><a href="addSubjectCategory.php">Add Subject Category</a></li>
+                        <li ><a href="subjectsCategories.php">All Subjects Categories</a></li>
+                    </ul>
+                </li>
+
+
+                <li class="">
+                    <a href="#"><i class="fa fa-list-alt"></i> <span class="nav-label">Subjects</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li class="active"><a href="addSubject.php">Add Subject</a></li>
+                        <li ><a href="subjects.php">All Subjects </a></li>
+                    </ul>
+                </li>
+
+
+                <li class="">
+                    <a href="#"><i class="fa fa-list-alt"></i> <span class="nav-label">Articles</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li class="active"><a href="addArticle.php">Add Article </a></li>
+                        <li ><a href="articles.php">All Articles </a></li>
+                    </ul>
+                </li>
+
+
+                <li class="">
+                    <a href="#"><i class="fa fa-question-circle"></i> <span class="nav-label">FAQ Categories</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li class="active"><a href="addFaqCategory.php">Add FAQ Category</a></li>
+                        <li ><a href="faqsCategories.php">All FAQ Categories</a></li>
+                    </ul>
+                </li>
+
+
+
+                <li class="">
+                    <a href="#"><i class="fa fa-question"></i> <span class="nav-label">FAQs</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li class="active"><a href="addFaq.php">Add FAQ</a></li>
+                        <li ><a href="faqs.php">All FAQ</a></li>
+                        <li ><a href="faqCategory.php">All FAQS By Category</a></li>
+                    </ul>
+                </li>
+
+
+
+
+                <li class="">
+                    <a href="#"><i class="fa fa-question-circle"></i> <span class="nav-label">Web Design FAQs</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li class="active"><a href="addWebDesignFaq.php">Add Web Design FAQ</a></li>
+                        <li ><a href="webDesignFaqs.php">All Web Design FAQS</a></li>
+                    </ul>
+                </li>
+
+
+
+                <li class="">
+                    <a href="#"><i class="fa fa-question-circle"></i> <span class="nav-label">Hosting FAQs</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li class="active"><a href="addHostFaq.php">Add Hosting FAQ</a></li>
+                        <li ><a href="hostingFaqs.php">All Hosting FAQS</a></li>
+                    </ul>
+                </li>
+
+
+
+                <li class="">
+                    <a href="#"><i class="fa fa-question-circle"></i> <span class="nav-label">E-Marketing FAQs</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li class="active"><a href="addEmarketingFaq.php">Add E-Marketing FAQ</a></li>
+                        <li ><a href="emarketingFaqs.php">All E-Marketings FAQS</a></li>
+                    </ul>
+                </li>
+
+
+                <li class="">
+                    <a href="#"><i class="fa fa-dollar"></i> <span class="nav-label">Offer Categories</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li class="active"><a href="addOfferCategory.php">Add Offer Category</a></li>
+                        <li ><a href="offerCategories.php">All Offers Categories</a></li>
+                    </ul>
+                </li>
+
+
+                <li class="">
+                    <a href="#"><i class="fa fa-dollar"></i> <span class="nav-label">Offers</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li class="active"><a href="addOffer.php">Add Offer</a></li>
+                        <li ><a href="offers.php">All Offers</a></li>
+                    </ul>
+                </li>
+
+
+
+            </ul>
+
+        </div>
+    </nav>

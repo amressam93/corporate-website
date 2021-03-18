@@ -1,0 +1,52 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Update User Group</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="<?php echo WEBINTY_PATH; ?>admin_dashboard/">Home</a>
+            </li>
+            <li class="active">
+                <a href="<?php echo WEBINTY_PATH; ?>admin_dashboard/usersGroups.php">User Groups</a>
+            </li>
+            <li>
+                <strong>Update User Group</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+
+        <div class="col-lg-8">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Update User Groups <small> Simple Update User Groups </small></h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+
+                        <div id="updateUserGroup_result"></div>
+
+                        <div class="col-sm-12"><h3 class="m-t-none m-b">Update User Groups</h3>
+
+                            <form role="form" id="updateUserGroupForm">
+                                <div class="form-group"><label>Group Name</label> <input type="text" placeholder="Enter Group Name" class="form-control" id="groupName" name="groupName" value="<?php echo $userGroup['group_name']; ?>"></div>
+                                <div class="form-group"><label>Permission</label> <input type="text" placeholder="Enter Permission" class="form-control" id="permission" name="permission" value="<?php echo $userGroup['permissions']; ?>"></div>
+                                <input type="hidden" name="userGroupId" value="<?php echo $userGroup['group_id']; ?>" style="display: none">
+                                <div>
+                                    <button class="btn btn-sm btn-primary" type="submit" id="updateUserGroup_submit" name="updateUserGroupSubmit" style="font-weight: bold"><strong>Update User Group</strong></button>
+                                    <span  class="btn btn-sm btn-primary" id="updateUserGroup_spinner" style="font-weight: bold;display: none">Loading <i class="fa fa-refresh fa-spin" style="font-size:18px;color: white"></i></span>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>

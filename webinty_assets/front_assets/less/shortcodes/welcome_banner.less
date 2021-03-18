@@ -1,0 +1,241 @@
+@import "../variables.less";
+
+/* ----------------------------------------------------------------
+	Welcome Banner
+-----------------------------------------------------------------*/
+
+.title_banner {
+    background: @main-color;
+    padding: 25px 0 27px;
+    position: relative;
+    margin-bottom: 1px;
+    h2 {
+        color: #fff;
+        font-family: @main-title-font-family;
+        font-size: 24px;
+        font-weight: 400;
+        margin: 0;
+    }
+}
+.title_banner.t_b_color1 {
+    background: #684962;
+}
+.title_banner.t_b_color2 {
+    background: @red-color;
+}
+.title_banner.t_b_color3 {
+    background: #3E6477;
+}
+.welcome_banner.full_colored, .welcome_banner.boxed_colored {
+    background: #00a69b;
+    color: #fff;
+}
+.welcome_banner.full_colored h3, .welcome_banner.boxed_colored h3, .welcome_banner.full_banner_colored h3,.welcome_banner.full_gray h3 {
+    color: #fff;
+}
+.welcome_banner.full_gray {
+    background: #3b3b3b;
+    padding: 40px 0;
+    .content {
+        padding: 0 15px;
+        .btn_a {
+            margin: 3px 0;
+            right: 0;
+        }
+    }
+    h3:not(.centered) {
+        float: left;
+    }
+    h3 {
+        line-height: 48px;
+        margin-bottom: 0;
+        padding: 0;
+        position: relative;
+        text-transform: none;
+    }
+}
+.container {
+    .welcome_banner.full_gray {
+        .content {
+            padding-left: 40px;
+            .btn_a {
+                right: 30px;
+            }
+        }
+    }
+}
+.welcome_banner.full_white, .welcome_banner.classic_white {
+    background: #fff;
+    border-bottom:1px solid #EEF1F2;
+}
+.welcome_banner {
+    position: relative;
+    .content {
+        padding: 50px 15px;
+    }
+    h3 {
+        font-size: 24px;
+        font-weight: 300;
+        text-transform: uppercase;
+        margin: 0px 0px 15px;
+        i {
+            margin: 0 6px;
+            vertical-align: middle;
+        }
+        i.larg {
+            font-size: 32px;
+        }
+        i.small {
+            font-size: 24px;
+        }
+        span {
+            color:@main-color;
+        }
+    }
+    .intro_text {
+        line-height: 25px;
+    }
+}
+.welcome_banner.full_colored:after {
+    background: rgba(255, 255, 255, 0.2);
+    content: "";
+    display: block;
+    height: 1px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.welcome_banner.full_gray:after {
+    background: rgba(0, 0, 0, 0.15);
+    bottom: 0;
+    content: "";
+    height: 5px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
+.welcome_banner.full_gray:before {
+    z-index: 1;
+    height: 1px;
+    content: "";
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(255,255,255,.1);
+}
+.welcome_banner.full_colored .btn_a, .welcome_banner.full_white .btn_a, .welcome_banner.boxed_white .btn_a,.welcome_banner.boxed_colored .btn_a {
+    margin-left: 45px;
+}
+.welcome_banner.classic_white h3, .welcome_banner.classic_white h3 span, .welcome_banner.full_banner_colored h3 {
+    font-style: normal;
+    font-weight: 700;
+}
+.welcome_banner.classic_white .intro_text, .welcome_banner.full_white .intro_text, .welcome_banner.boxed_white .intro_text {
+    color: #777;
+}
+.welcome_banner.classic_white .intro_text, .welcome_banner.full_banner_colored .intro_text {
+    display: block;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 34px;
+}
+.welcome_banner.boxed_colored, .welcome_banner.boxed_white {
+    -moz-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.04) inset;
+    -webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.04) inset;
+    -ms-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.04) inset;
+    -o-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.04) inset;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.04) inset;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+.welcome_banner.boxed_colored .content, .welcome_banner.boxed_white .content {
+    padding: 35px 25px;
+}
+.welcome_banner.boxed_white {
+    border: 1px solid #eef1f2;
+}
+.boxed_colored .btn_a, .full_colored .btn_a {
+    border: none;
+}
+.welcome_banner.full_banner_colored {
+    background: #1B2228;
+    color: #fff;
+    z-index: 1;
+    .intro_text {
+        color: #aaa;
+    }
+}
+.welcome_banner.full_banner_colored:after {
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+    content: "";
+    display: block;
+    height: 1px;
+    position: absolute;
+    top: 5px;
+    width: 100%;
+}
+.welcome_banner.full_banner_colored:before {
+    background: rgba(0, 0, 0, .2);
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 5px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
+.welcome_banner_slider {
+    padding: 0 20px;
+    position: relative;
+    .owl-controls {
+        position: absolute;
+        width: 100%;
+        top:0;
+    }
+    .owl-prev {
+        left: -25px;
+    }
+    .owl-next {
+        right: 15px;
+    }
+}
+.welcome_banner_slider .owl-prev, .welcome_banner_slider .owl-next {
+    color: #ccc;
+    font-size: 24px;
+    position: absolute;
+    top: 0;
+}
+.welcome_banner_slider .owl-prev:hover, .welcome_banner_slider .owl-next:hover {
+    color:#999;
+}
+.rotate_icon {
+    background: @red-color;
+    bottom: 0px;
+    display: inline-block;
+    font-size: 32px;
+    height: 70px;
+    line-height: 71px;
+    position: absolute;
+    text-align: center;
+    width: 70px;
+    color: #fff;
+    transform: translateY(50%) translateX(-50%);
+    -webkit-transform: translateY(50%) translateX(-50%);
+    -moz-transform: translateY(50%) translateX(-50%);
+    -o-transform: translateY(50%) translateX(-50%);
+}
+.rotate_icon:after {
+    border-color: transparent transparent @red-color transparent;
+    border-style: solid;
+    border-width: 8px;
+    top: -13px;
+    content: "";
+    display: block;
+    position: absolute;
+    right: 26px;
+}
+.welcome_banner.full_gray .btn_a i.in_left, .welcome_banner.full_gray .btn_a i.in_right {
+    color: @red-color;
+}

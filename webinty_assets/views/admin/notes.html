@@ -1,0 +1,70 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2><?php echo $pageTitle; ?></h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="<?php echo WEBINTY_PATH; ?>admin_dashboard/">Home</a>
+            </li>
+            <li>
+                <a href="<?php echo WEBINTY_PATH; ?>admin_dashboard/clientTickets.php">All Tickets</a>
+            </li>
+            <li>
+                <a href="<?php echo WEBINTY_PATH; ?>admin_dashboard/ticket.php?id=<?php echo $ticket['client_id']; ?>">Client Ticket : <?php echo $ticket['client_name']; ?></a>
+            </li>
+            <li class="active">
+                <strong><?php echo $pageTitle; ?></strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="container">
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>All Notes - <i class="fa fa-comments-o "></i> <?php echo $numberOf_Notes; ?> Comments</h5>
+                    </div>
+                    <div class="ibox-content">
+
+                        <div id="clientNotes_result" style="display: none"></div>
+
+                        <div>
+
+                            <div class="feed-activity-list">
+                                <?php foreach($notes as $note) { ?>
+
+                                <!-- get all user data by notes (created_by) -->
+                                <?php $note_Created_By = $usersModel->getUser($note['created_by']);  ?>
+
+                                <div class="feed-element">
+                                    <a href="#" class="pull-left">
+                                        <img alt="image" class="img-circle" src="<?php echo WEBINTY_BACKEND_UPLOADS_PATH ; ?>users/<?php echo $note_Created_By['image']; ?>">
+                                    </a>
+                                    <div class="media-body ">
+                                        <strong><?php echo $note_Created_By['name'];  ?></strong> posted Note on Client Ticket Name <strong><?php echo $ticket['client_name']; ?></strong>  <br>
+                                        <small class="text-muted" style="font-weight: bold"><?php echo $note['created_at'] ?></small>
+                                        <div class="well">
+                                            <?php echo $note['note_description']; ?>
+                                        </div>
+                                        <div class="pull-right">
+                                            <a class="btn btn-xs btn-danger confirmDeleteClientNote" id="<?php echo $note['note_id']; ?>"><i class="fa fa-trash"></i> Delete Note</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <?php } ?>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+</div>

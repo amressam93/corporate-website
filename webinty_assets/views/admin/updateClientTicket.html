@@ -1,0 +1,70 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2><?php echo $pageTitle; ?></h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="<?php echo WEBINTY_PATH; ?>admin_dashboard/">Home</a>
+            </li>
+            <li>
+                <a href="<?php echo WEBINTY_PATH; ?>admin_dashboard/clientTickets.php">All Tickets</a>
+            </li>
+            <li class="active">
+                <strong><?php echo $pageTitle; ?></strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="container">
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+
+            <div class="col-lg-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5><?php echo $pageTitle; ?> <small> Simple Update Client Ticket </small></h5>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="row">
+
+                            <div id="updateClientTicket_Result"></div>
+
+                            <div class="col-sm-12"><h3 class="m-t-none m-b">Update Client Ticket</h3>
+
+                                <form role="form" id="updateClientTicketForm" enctype="multipart/form-data">
+
+                                    <div class="form-group"><label>Client Name</label> <input type="text" placeholder="Enter Client Name" class="form-control" id="clientName" name="clientName" value="<?php echo $ticket['client_name']; ?>"></div>
+                                    <div class="form-group"><label>Client Phone Number</label> <input type="number" placeholder="Enter Client Phone Number" class="form-control" id="clientPhoneNumber" name="clientPhoneNumber" value="<?php echo substr($ticket['client_mobile'], 1); ?>"></div>
+                                    <div class="form-group"><label>Client Email Address</label> <input type="email" placeholder="Enter Client Email Address" class="form-control" id="clientEmailAddress" name="clientEmailAddress" value="<?php echo $ticket['client_email']; ?>"></div>
+                                    <div class="form-group"><label>Client Company Name</label> <input type="text" placeholder="Enter Client Company Name" class="form-control" id="clientCompanyName" name="clientCompanyName" value="<?php echo $ticket['client_company_name']; ?>"></div>
+                                    <div class="form-group"><label>Client Service Type</label> <input type="text" placeholder="Enter Client service Type" class="form-control" id="clientServiceType" name="clientServiceType" value="<?php echo $ticket['client_service_type']; ?>"></div>
+                                    <div class="form-group"><label>Client Offer</label> <input type="text" placeholder="Enter Client Offer" class="form-control" id="clientOffer" name="clientOffer" value="<?php echo $ticket['client_offer']; ?>"></div>
+                                    <div class="form-group"><label>Client City</label> <input type="text" placeholder="Enter Client City" class="form-control" id="clientCity" name="clientCity" value="<?php echo $ticket['client_city']; ?>"></div>
+                                    <div class="form-group"><label>Client Address</label> <input type="text" placeholder="Enter Client Address" class="form-control" id="clientAddress" name="clientAddress" value="<?php echo $ticket['client_address']; ?>"></div>
+                                    <input type="hidden" name="clientTicketID" value="<?php echo $ticket['client_id']; ?>">
+                                    <div class="form-group"><label>Client Status</label>
+                                        <select class="form-control" name="clientStatus" id="clientStatus">
+
+                                            <option value="1" <?php echo ($ticket['client_status']== 1)? "selected": "" ; ?> >Active</option>
+                                            <option value="2" <?php echo ($ticket['client_status']== 2)? "selected": "" ; ?> >Pending</option>
+                                            <option value="3" <?php echo ($ticket['client_status']== 3)? "selected": "" ; ?> >Close</option>
+                                        </select>
+                                    </div>
+
+                                    <div>
+                                        <button class="btn btn-sm btn-primary" type="submit" id="updateClientTicket_submit" name="updateClientTicket_submit" style="font-weight: bold"><strong>Update Client Ticket</strong></button>
+                                        <span  class="btn btn-sm btn-primary" id="updateClientTicket_spinner" style="font-weight: bold;display: none">Loading <i class="fa fa-refresh fa-spin" style="font-size:18px;color: white"></i></span>
+                                    </div>
+                                </form>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>

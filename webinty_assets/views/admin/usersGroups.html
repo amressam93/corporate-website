@@ -1,0 +1,64 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>User Groups</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="<?php echo WEBINTY_PATH; ?>admin_dashboard/">Home</a>
+            </li>
+            <li class="active">
+                <strong>User Groups</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="container">
+<div class="col-lg-10">
+    <div class="ibox float-e-margins">
+        <div class="ibox-title">
+            <h5>User Groups</h5>
+        </div>
+        <div class="ibox-content">
+
+            <div id="deleteUserGroup_result" style="display: none"></div>
+
+            <div style="overflow-x:auto;">
+
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>#ID</th>
+                    <th>Group Name</th>
+                    <th>Permissions</th>
+                    <th>Control</th>
+                </tr>
+                </thead>
+                <tbody style="font-weight: bold" id="userGroupsTable">
+
+                <?php foreach($userGroups as $group){ ?>
+                <tr>
+                    <td><?php echo $group['group_id']; ?></td>
+                    <td><?php echo $group['group_name']; ?></td>
+                    <td><?php echo $group['permissions']; ?></td>
+                    <td>
+                        <div class="btn-group">
+                        <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle" aria-expanded="false">Action <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="updateUserGroup.php?id=<?php echo $group['group_id']; ?>" class="font-bold"> <i class="fa fa-refresh"></i> Update </a></li>
+                            <li><a href="" class="font-bold confirmDeleteUserGroup" id="<?php echo $group['group_id']; ?>"> <i class="fa fa-trash"></i> Delete </a></li>
+                        </ul>
+                    </div>
+                    </td>
+                </tr>
+
+                <?php } ?>
+
+                </tbody>
+            </table>
+
+        </div>
+
+        </div>
+    </div>
+</div>
+</div>

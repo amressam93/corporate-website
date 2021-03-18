@@ -1,0 +1,114 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2><?php echo $pageTitle; ?></h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="<?php echo WEBINTY_PATH; ?>admin_dashboard/">Home</a>
+            </li>
+            <li>
+                <a href="<?php echo WEBINTY_PATH; ?>admin_dashboard/subjects.php">All Subjects</a>
+            </li>
+            <li class="active">
+                <strong><?php echo $pageTitle; ?></strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+
+
+<div class="container">
+    <div class="ibox float-e-margins">
+        <div class="ibox-title">
+            <h5><?php echo $pageTitle; ?></h5>
+        </div>
+        <div class="ibox-content">
+
+
+
+            <div class="row">
+
+                <!-- Blog Post Content Column -->
+                <div class="col-lg-9">
+
+                    <!-- Blog Post -->
+
+                    <!-- Title -->
+                    <h1 style="font-family: 'Noto Kufi Arabic', sans-serif;"><?php echo $subject['subject_title']; ?></h1>
+
+                    <!-- Author -->
+                    <p class="lead">
+                        by <a href="<?php echo WEBINTY_PATH; ?>admin_dashboard/profile.php?id=<?php echo $subject['created_by']; ?>"><?php echo $subject['name']; ?></a>
+                    </p>
+
+                    <hr>
+
+                    <!-- Date/Time -->
+                    <p><span class="glyphicon glyphicon-time"></span> Posted on <strong><?php echo $subject['created_at']; ?></strong></p>
+
+                    <hr>
+
+
+                    <!-- Date/Time -->
+                    <p> <span class="glyphicon glyphicon-tags"> </span> Category: <strong class="blink_me"><?php echo $subject['category_name']; ?></strong> </p>
+
+                    <hr>
+
+                    <!-- Preview Image -->
+                    <img class="img-responsive img-rounded" src="<?php echo WEBINTY_BACKEND_UPLOADS_PATH; ?>subjects/<?php echo $subject['subject_image']; ?>" alt="<?php echo $subject['subject_title']; ?>" style="height:400px; ">
+
+                    <hr>
+
+                    <!-- Post Content -->
+                     <div style="font-family: 'Noto Kufi Arabic', sans-serif;">
+                         <h5>Subject Description: </h5>
+                         <?php echo $subject['subject_description']; ?>
+                     </div>
+
+
+
+                </div>
+
+                <!-- Blog Sidebar Widgets Column -->
+                <div class="col-md-3">
+
+
+
+                    <!-- Blog Categories Well -->
+                    <div class="well text-center">
+                        <h4>Subject Categories</h4>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <ul class="list-unstyled">
+                                    <?php foreach($categories as $category) {  ?>
+
+                                    <?php  $categoryId = $category['category_id'];  $categoryName = $category['category_name']; ?>
+
+                                    <li style="font-weight: bold"><a href=""><?php echo $categoryName;  ?> </a></li>
+
+                                    <?php } ?>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- /.row -->
+                    </div>
+
+                    <!-- Side Widget Well -->
+                    <div class="well">
+                        <h4>Side Widget Well</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- /.row -->
+
+
+            <hr/>
+
+
+
+        </div>
+    </div>
+</div>

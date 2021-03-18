@@ -1,0 +1,111 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2><?php echo $pageTitle; ?></h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="<?php echo WEBINTY_PATH; ?>admin_dashboard/">Home</a>
+            </li>
+            <li>
+                <a href="<?php echo WEBINTY_PATH; ?>admin_dashboard/clientTickets.php">All Tickets</a>
+            </li>
+            <li class="active">
+                <strong><?php echo $pageTitle; ?></strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="container">
+<div class="row">
+    <div class="col-lg-12">
+        <div class="wrapper wrapper-content animated fadeInUp">
+            <div class="ibox">
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="m-b-md">
+                                <h2><?php echo $pageTitle; ?></h2>
+                            </div>
+                            <dl class="dl-horizontal">
+                                <dt>Status:</dt> <dd><?php if($ticket['client_status']==1) { echo '<span class="label label-primary"> <i class="fa fa-arrow-circle-up"></i> Active</span>'; } if($ticket['client_status']==2) { echo '<span class="label label-warning"> <i class="fa fa-exclamation-circle"></i> Pending..</span>'; }  if($ticket['client_status']==3) { echo '<span class="label label-danger"> <i class="fa fa-arrow-circle-down"></i> Close</span>'; }  ?></dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <dl class="dl-horizontal">
+                                <dt># Client Ticket ID:</dt>    <dd style="font-weight: bold"><?php echo $ticket['client_id']; ?></dd>
+                                <dt>Client Name:</dt>    <dd style="font-weight: bold"><?php echo $ticket['client_name']; ?></dd><br/>
+                                <dt>Client Phone Number: </dt> <dd style="font-weight: bold">  <?php echo substr($ticket['client_mobile'], 1); ?></dd>
+                                <dt>Client Email Address:</dt> <dd style=""> <?php echo $ticket['client_email']; ?> </dd>
+                                <dt>Client Company Name: </dt> <dd style="">  <?php echo $ticket['client_company_name']; ?> </dd><br/>
+                                <dt>Type Of Services:    </dt> <dd style="font-weight: bold">  <span class="label label-success" data-role="tagsinput"> <?php echo $ticket['client_service_type']; ?> </span> </dd><br/>
+                                <dt>Client Offer:        </dt> <dd style="">  <?php echo $ticket['client_offer']; ?> </dd>
+                                <dt>Client City:         </dt> <dd style="">  <?php echo $ticket['client_city']; ?> </dd><br/>
+                                <dt><i class="fa fa-map-marker" style="font-size: large"></i> Client Address:      </dt> <dd style="font-weight: bold">  <?php echo $ticket['client_address']; ?> </dd>
+                            </dl>
+                        </div>
+                        <div class="col-lg-7" id="cluster_info">
+                            <dl class="dl-horizontal" >
+
+                                <!-- get user By id -->
+                                <?php $nameOfUser  = $usersModel->getUser($ticket['created_by']);  ?>
+
+                                <dt>Ticket_Created By:</dt> <dd style="font-weight: bold;color: #1ab394"><?php echo $nameOfUser['name']; ?></dd>
+                                <dt>Ticket_Created AT:</dt> <dd style="font-weight: bold;color: #1ab394"> 	<?php echo $ticket['created_at']; ?> </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="row m-t-sm">
+                        <div class="col-lg-12">
+                            <div class="panel blank-panel">
+                                <a style="float: right;margin-top: 10px" class="btn btn-primary" href="addClientNote.php?ticket=<?php echo $ticket['client_id']; ?>"> <i class="fa fa-comments-o "></i> Add Note</a>
+                                <div class="panel-heading">
+                                    <div class="panel-options">
+                                        <ul class="nav nav-tabs">
+                                            <li class="active"><a href="#tab-1" data-toggle="tab">Ticket Notes <i class="fa fa-comments-o "></i><?php echo $numberOfTicket; ?> Comments</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="panel-body">
+
+                                    <div class="tab-content">
+                                        <div class="tab-pane active" id="tab-1">
+                                            <div class="feed-activity-list">
+
+                                                <?php foreach($notes as $note) { ?>
+                                                <!-- get all user data by notes (created_by) -->
+                                                <?php $note_Created_By = $usersModel->getUser($note['created_by']);  ?>
+                                                <div class="feed-element">
+                                                    <a href="#" class="pull-left">
+                                                        <img alt="image" class="img-circle" src="<?php echo WEBINTY_BACKEND_UPLOADS_PATH ; ?>users/<?php echo $note_Created_By['image']; ?>">
+                                                    </a>
+                                                    <div class="media-body ">
+                                                        <strong><?php echo $note_Created_By['name'];  ?></strong> posted Note on Client Ticket Name <strong><?php echo $ticket['client_name']; ?></strong>  <br>
+                                                        <small class="text-muted" style="font-weight: bold"><?php echo $note['created_at'] ?></small>
+                                                        <div class="well" style="font-weight: bold;">
+                                                            <?php echo $note['note_description']; ?>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <?php } ?>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>

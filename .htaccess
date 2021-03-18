@@ -1,0 +1,6 @@
+RewriteEngine On
+Redirect /index.php /ar/
+RewriteBase /webinty/
+
+
+Options -Indexes

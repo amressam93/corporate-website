@@ -1,0 +1,71 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>All Subjects</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="<?php echo WEBINTY_PATH; ?>admin_dashboard/">Home</a>
+            </li>
+            <li class="active">
+                <strong>All Subjects</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="container">
+<div class="col-lg-12">
+    <div class="ibox float-e-margins">
+        <div class="ibox-title">
+            <h5>All Subjects</h5>
+        </div>
+        <div class="ibox-content">
+
+            <div id="subjects_result" style="display: none"></div>
+
+            <div style="overflow-x:auto;">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>#ID</th>
+                    <th>Subject Title</th>
+                    <th>Subject Category</th>
+                    <th>Created_By</th>
+                    <th>Created_AT</th>
+                    <th>Control</th>
+                </tr>
+                </thead>
+                <tbody style="font-weight: bold">
+
+                <?php foreach($subjects as $subject){ ?>
+                <tr>
+                    <td><?php echo $subject['subject_id']; ?></td>
+                    <td><?php echo $subject['subject_title']; ?></td>
+                    <td><?php echo $subject['category_name']; ?></td>
+                    <td><?php echo $subject['name']; ?></td>
+                    <td><?php echo $subject['created_at']; ?></td>
+                    <td>
+                        <div class="btn-group">
+                            <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle" aria-expanded="false">Action <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a href="subject.php?id=<?php echo $subject['subject_id']; ?>" class="font-bold"> <i class="fa fa-desktop"></i> Show Details </a></li>
+                                <li><a href="articlesSubject.php?id=<?php echo $subject['subject_id']; ?>" class="font-bold"> <i class="fa fa-list"></i> Get Articles </a></li>
+                                <li><a href="updateSubject.php?id=<?php echo $subject['subject_id']; ?>" class="font-bold"> <i class="fa fa-refresh"></i> Update </a></li>
+                                <li><a href="" class="font-bold confirmDeleteSubject" id="<?php echo $subject['subject_id']; ?>"> <i class="fa fa-trash"></i> Delete </a></li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+
+                <?php } ?>
+
+                </tbody>
+            </table>
+        </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+</div>

@@ -1,0 +1,72 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Add User</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="<?php echo WEBINTY_PATH; ?>admin_dashboard/">Home</a>
+            </li>
+            <li class="active">
+                <strong>Add User</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+
+        <div class="col-lg-8">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Add User <small> Simple Add User </small></h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+
+                        <div id="usersResult"></div>
+
+                        <div class="col-sm-12"><h3 class="m-t-none m-b">Add User</h3>
+
+                            <form role="form" id="AddUserForm" enctype="multipart/form-data">
+
+                                <div class="form-group"><label>Name </label> <input type="text" placeholder="Enter Name" class="form-control" id="name" name="name"></div>
+                                <div class="form-group"><label>user Name</label> <input type="text" placeholder="Enter User Name" class="form-control" id="username" name="username"></div>
+                                <div class="form-group"><label>password</label> <input type="password" placeholder="Enter password" class="form-control" id="password" name="password"></div>
+                                <div class="form-group"><label>Email Address</label> <input type="email" placeholder="Enter Your Email Address" class="form-control" id="email" name="email"></div><br/>
+                                <div class="form-group"><label>About User</label> <textarea id="edit" name="aboutuser" ></textarea></div><br/>
+                                <div class="form-group"><label>Image</label> <input type="file" class="form-control" id="userImage" name="userImage"></div>
+                                <div class="form-group"><label>FaceBook</label> <input type="text" placeholder="Enter Your FaceBook link" class="form-control" id="facebook" name="facebook"></div>
+                                <div class="form-group"><label>Twitter</label> <input type="text" placeholder="Enter Your Twitter link " class="form-control" id="twitter" name="twitter"></div>
+                                <div class="form-group"><label>LinkedIn</label> <input type="text" placeholder="Enter Your LinkedIn link" class="form-control" id="linkedin" name="linkedin"></div>
+                                <div class="form-group"><label>GooglePlus</label> <input type="text" placeholder="Enter Your GooglePlus link" class="form-control" id="googleplus" name="googleplus"></div>
+                                <div class="form-group"><label>User Group</label>
+                                <select class="form-control" name="user_group" id="user_group">
+
+                                    <?php foreach($userGroups as $group){
+
+                                       $id   = $group['group_id'];
+                                       $name = $group['group_name'];
+
+                                       echo "<option value='$id'>$name</option>";
+
+                                     } ?>
+
+                                </select>
+                                </div>
+
+                                <div>
+                                    <button class="btn btn-sm btn-primary" type="submit" id="user_submit" name="userSubmit" style="font-weight: bold"><strong>Add User</strong></button>
+                                    <span  class="btn btn-sm btn-primary" id="user_spinner" style="font-weight: bold;display: none">Loading <i class="fa fa-refresh fa-spin" style="font-size:18px;color: white"></i></span>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>

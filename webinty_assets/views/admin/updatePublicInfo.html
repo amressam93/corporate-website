@@ -1,0 +1,90 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Update Public Informations</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="<?php echo WEBINTY_PATH; ?>admin_dashboard/">Home</a>
+            </li>
+            <li>
+                <a href="<?php echo WEBINTY_PATH; ?>admin_dashboard/allPublicInfo.php">All Informations</a>
+            </li>
+            <li class="active">
+                <strong>Update Public Informations</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+
+        <div class="col-lg-8">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Update Public Informations <small> Simple Update Public Informations </small></h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+
+                        <div id="updatepublicInfoResult"></div>
+
+                        <div class="col-sm-12"><h3 class="m-t-none m-b">Update Public Informations</h3>
+
+                            <form role="form" id="updatePublicInfoForm" enctype="multipart/form-data">
+
+                                <div class="form-group"><label>Company Name:</label> <input type="text" placeholder="Enter Your Company Name" class="form-control" id="company_name" name="company_name" value="<?php echo $info['company_name']; ?>"></div>
+                                <div class="form-group"><label>About Company:</label> <textarea id="edit" name="aboutcompany" ><?php echo $info['about_company']; ?></textarea></div>
+                                <div class="form-group"><label>Company Address:</label> <input type="text" placeholder="Enter Company Address" class="form-control" id="company_address" name="company_address" value="<?php echo $info['company_address']; ?>"></div>
+                                <div class="form-group"><label>Company Logo:</label><br/>
+                                    <img class="img-thumbnail" width="100px" height="100px" src="<?php echo WEBINTY_BACKEND_UPLOADS_PATH ; ?>general/<?php echo $info['company_logo']; ?>"><br><br>
+                                    <input type="file" class="form-control" id="company_logo" name="company_logo">
+                                </div>
+                                <div class="form-group"><label>Mobile_1:</label> <input type="number" placeholder="Enter Mobile Number" class="form-control" id="mobile1" name="mobile1" value="<?php echo $info['mobile_1']; ?>"></div>
+                                <div class="form-group"><label>Mobile_2:</label> <input type="number" placeholder="Enter Mobile Number" class="form-control" id="mobile2" name="mobile2" value="<?php echo $info['mobile_2']; ?>"></div>
+                                <div class="form-group"><label>Landline Phone Number:</label> <input type="number" placeholder="Enter Landline Phone Number" class="form-control" id="update_landline_phone_number" name="update_landline_phone_number" value="<?php echo $info['landline_phone_number']; ?>"></div>
+                                <div class="form-group"><label>Sales Mobile Number_1:</label> <input type="number" placeholder="Enter Sales Mobile Number" class="form-control" id="update_sales_mobile_number_1" name="update_sales_mobile_number_1" value="<?php echo $info['sales_phone_number_1']; ?>"></div>
+                                <div class="form-group"><label>Sales Mobile Number_2:</label> <input type="number" placeholder="Enter Sales Mobile Number" class="form-control" id="update_sales_mobile_number_2" name="update_sales_mobile_number_2" value="<?php echo $info['sales_phone_number_2']; ?>"></div>
+                                <div class="form-group"><label>Sales Mobile Number_3:</label> <input type="number" placeholder="Enter Sales Mobile Number" class="form-control" id="update_sales_mobile_number_3" name="update_sales_mobile_number_3" value="<?php echo $info['sales_phone_number_3']; ?>"></div>
+                                <div class="form-group"><label>Technical Support Mobile Number_1:</label> <input type="number" placeholder="Enter Technical Support Mobile Number" class="form-control" id="update_Technical_Support_Mobile_number_1" name="update_Technical_Support_Mobile_number_1" value="<?php echo $info['technical_support_phone_number_1']; ?>"></div>
+                                <div class="form-group"><label>Technical Support Mobile Number_2:</label> <input type="number" placeholder="Enter Technical Support Mobile Number" class="form-control" id="update_Technical_Support_Mobile_number_2" name="update_Technical_Support_Mobile_number_2" value="<?php echo $info['technical_support_phone_number_2']; ?>"></div>
+                                <div class="form-group"><label>Customer Service Mobile Number_1:</label> <input type="number" placeholder="Enter Customer Service Mobile Number" class="form-control" id="update_customer_service_Mobile_number_1" name="update_customer_service_Mobile_number_1" value="<?php echo $info['call_center_phone_number_1']; ?>"></div>
+                                <div class="form-group"><label>Customer Service Mobile Number_2:</label> <input type="number" placeholder="Enter Customer Service Mobile Number" class="form-control" id="update_customer_service_Mobile_number_2" name="update_customer_service_Mobile_number_2" value="<?php echo $info['call_center_phone_number_2']; ?>"></div>
+                                <div class="form-group"><label>Hosting Service Mobile Number:</label> <input type="number" placeholder="Enter Hosting Service Mobile Number" class="form-control" id="update_hosting_service_Mobile_number" name="update_hosting_service_Mobile_number" value="<?php echo $info['hosting_phone_number']; ?>"></div>
+                                <div class="form-group"><label>WhatsApp Main Mobile Number:</label> <input type="number" placeholder="Enter WhatsApp Mobile Number" class="form-control" id="update_whatsapp_main_mobile_number" name="update_whatsapp_main_mobile_number" value="<?php echo $info['whatsapp_main_number']; ?>"></div>
+                                <div class="form-group"><label>WhatsApp Sales Mobile Number:</label> <input type="number" placeholder="Enter WhatsApp Mobile Number" class="form-control" id="update_whatsapp_sales_mobile_number" name="update_whatsapp_sales_mobile_number" value="<?php echo $info['whatsapp_sales_number']; ?>"></div>
+                                <div class="form-group"><label>Email_info:</label> <input type="email" placeholder="Enter Email Address" class="form-control" id="email_info" name="email_info" value="<?php echo $info['email_info']; ?>"></div>
+                                <div class="form-group"><label>Email_sales:</label> <input type="email" placeholder="Enter Email Address" class="form-control" id="email_sales" name="email_sales" value="<?php echo $info['email_sales']; ?>"></div>
+                                <div class="form-group"><label>Email_marketing:</label> <input type="email" placeholder="Enter Email Address" class="form-control" id="email_marketing" name="email_marketing" value="<?php echo $info['email_marketing']; ?>"></div>
+                                <div class="form-group"><label>Email_Technical_Support:</label> <input type="email" placeholder="Enter Email Address" class="form-control" id="email_technical" name="email_technical" value="<?php echo $info['email_technical_support']; ?>"></div>
+                                <div class="form-group"><label>Email_Call_Center:</label> <input type="email" placeholder="Enter Email Address" class="form-control" id="email_callcenter" name="email_callcenter" value="<?php echo $info['email_call_center']; ?>"></div>
+                                <div class="form-group"><label>FaceBook:</label> <input type="text" placeholder="Enter Your FaceBook link" class="form-control" id="facebook" name="facebook" value="<?php echo $info['public_info_facebook']; ?>"></div>
+                                <div class="form-group"><label>Twitter:</label> <input type="text" placeholder="Enter Your Twitter link" class="form-control" id="twitter" name="twitter" value="<?php echo $info['public_info_twitter']; ?>"></div>
+                                <div class="form-group"><label>LinkedIn:</label> <input type="text" placeholder="Enter Your LinkedIn link" class="form-control" id="linkedin" name="linkedin" value="<?php echo $info['public_info_linkedin']; ?>"></div>
+                                <div class="form-group"><label>GooglePlus:</label> <input type="text" placeholder="Enter Your GooglePlus link" class="form-control" id="googleplus" name="googleplus" value="<?php echo $info['public_info_googleplus']; ?>"></div>
+                                <div class="form-group"><label>Skype:</label> <input type="text" placeholder="Enter Your Skype link" class="form-control" id="skype" name="skype" value="<?php echo $info['skype']; ?>"></div>
+                                <div class="form-group"><label>Blogger:</label> <input type="text" placeholder="Enter Your Blogger link" class="form-control" id="blogger" name="blogger" value="<?php echo $info['blogger']; ?>"></div>
+                                <div class="form-group"><label>WordPress:</label> <input type="text" placeholder="Enter Your WordPress link" class="form-control" id="wordpress" name="wordpress" value="<?php echo $info['wordpress']; ?>"></div>
+                                <div class="form-group"><label>Tumblr:</label> <input type="text" placeholder="Enter Your Tumblr link" class="form-control" id="tumblr" name="tumblr" value="<?php echo $info['tumblr']; ?>"></div>
+                                <div class="form-group"><label>Vimeo:</label> <input type="text" placeholder="Enter Your Vimeo link" class="form-control" id="vimeo" name="vimeo" value="<?php echo $info['vimeo']; ?>"></div>
+                                <div class="form-group"><label>Instagram:</label> <input type="text" placeholder="Enter Your Instagram link" class="form-control" id="instagram" name="instagram" value="<?php echo $info['instagram']; ?>"></div>
+
+                                <div class="form-group"><label>Google Map Iframe:</label> <textarea type="text" placeholder="Enter Google Map Iframe Tag" class="form-control" id="update_google_map_iframe" name="update_google_map_iframe"><?php echo $info['google_map_iframe']; ?></textarea></div>
+
+                                <input type="hidden" name="publicInfo_id" value="<?php echo $info['info_id']; ?>">
+
+                                <div>
+                                    <button class="btn btn-sm btn-primary" type="submit" id="updatepublicInfo_submit" name="updatepublicInfo_submit" style="font-weight: bold"><strong>Update Info</strong></button>
+                                    <span  class="btn btn-sm btn-primary" id="updatepublicInfo_spinner" style="font-weight: bold;display: none">Loading <i class="fa fa-refresh fa-spin" style="font-size:18px;color: white"></i></span>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
